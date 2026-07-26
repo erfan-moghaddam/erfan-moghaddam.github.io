@@ -841,11 +841,21 @@
       font-weight: 700;
     }
 
-    .confidential {
-      margin-top: 18px;
+    .visual-disclaimer {
+      margin: -10px 0 24px;
+      padding: 12px 14px;
+      border-left: 2px solid color-mix(in srgb, var(--accent) 48%, transparent);
       color: var(--muted-2);
+      background: color-mix(in srgb, var(--accent) 4%, transparent);
       font-size: 11px;
-      line-height: 1.65;
+      line-height: 1.75;
+    }
+
+    body.fa .visual-disclaimer {
+      direction: rtl;
+      text-align: right;
+      border-right: 2px solid color-mix(in srgb, var(--accent) 48%, transparent);
+      border-left: 0;
     }
 
     .concept-stage {
@@ -1307,7 +1317,7 @@
     body.fa .case-summary,
     body.fa .case-detail span,
     body.fa .case-feature,
-    body.fa .confidential,
+    body.fa .visual-disclaimer,
     body.fa .public-card p,
     body.fa .capability p,
     body.fa .process-step p,
@@ -1759,6 +1769,11 @@
         </p>
       </div>
 
+      <p class="visual-disclaimer" data-i18n="visualDisclaimer">
+        Interface visuals are original portfolio mockups and do not reproduce any private
+        product screen.
+      </p>
+
       <div class="work-list">
         <article class="case-study reveal">
           <div>
@@ -1818,11 +1833,6 @@
               <span>Camera Flow</span>
               <span>Session Management</span>
             </div>
-
-            <p class="confidential" data-i18n="confidentialNote">
-              Conceptual visual only. No client screen, logo, product name, or proprietary
-              design is reproduced.
-            </p>
           </div>
 
           <div class="concept-stage" aria-label="Conceptual operational Android interface">
@@ -1933,11 +1943,6 @@
               <span>Biometric UX</span>
               <span>Localization</span>
             </div>
-
-            <p class="confidential" data-i18n="confidentialNote">
-              Conceptual visual only. No client screen, logo, product name, or proprietary
-              design is reproduced.
-            </p>
           </div>
 
           <div class="concept-stage blue" aria-label="Conceptual consumer Android interface">
@@ -2288,13 +2293,13 @@
         downloadCv: "Download English CV",
         profileText:
           "Building maintainable Android applications with reliable product flows and clear technical decisions.",
-        proofPrivate: "Anonymized private Android products",
+        proofPrivate: "Private Android products presented anonymously",
         proofPrimary: "Primary Android development language",
         proofUi: "Modern declarative mobile interfaces",
         proofRemote: "Available for freelance and contract work",
-        workTitle: "Work built around real product constraints.",
+        workTitle: "Android products built for real-world constraints.",
         workDescription:
-          "Private product experience is presented as anonymized case studies. Client names, proprietary screens, internal roadmaps, and confidential assets are intentionally excluded.",
+          "Private product experience is presented through anonymized case studies. Client names, proprietary screens, internal roadmaps, and confidential assets are excluded.",
         operationalBadge: "Operational Android product",
         operationalTitle: "Smart-mobility platform for operator workflows",
         operationalSummary:
@@ -2310,8 +2315,8 @@
           "Authentication, session management, and request retry logic",
         operationalFeature3: "Payment and operational-status workflows",
         operationalFeature4: "Fast, reusable Jetpack Compose interface",
-        confidentialNote:
-          "Conceptual visual only. No client screen, logo, product name, or proprietary design is reproduced.",
+        visualDisclaimer:
+          "Interface visuals are original portfolio mockups and do not reproduce any private product screen.",
         labelSecure: "Secure session",
         labelVehicle: "Vehicle workflow",
         labelStatus: "API status",
@@ -2333,7 +2338,7 @@
         labelLocalized: "Localized UI",
         publicTitle: "Projects you can review directly.",
         publicDescription:
-          "Public repositories demonstrating API experimentation, technical presentation, and project communication.",
+          "Public repositories demonstrating API development, technical presentation, and project documentation.",
         cryptoText:
           "A Python-based API for cryptocurrency market-analysis and signal-generation experiments, with modular service responsibilities and data-processing flows.",
         portfolioText:
@@ -2360,7 +2365,7 @@
           "A practical workflow that keeps product goals, technical risk, and maintainability visible throughout implementation.",
         process1Title: "Understand",
         process1Text:
-          "Clarify the user flow, business rules, API behavior, constraints, and definition of done.",
+          "Clarify the user flow, business rules, API behavior, constraints, and acceptance criteria.",
         process2Title: "Structure",
         process2Text:
           "Define state, responsibilities, data flow, failure behavior, and architecture boundaries.",
@@ -2383,50 +2388,50 @@
 
       fa: {
         menu: "منو",
-        kickerWork: "نمونه‌کارهای منتخب",
-        kickerPublic: "پروژه‌های عمومی",
-        kickerCapabilities: "توانمندی‌ها",
+        kickerWork: "نمونه کارهای منتخب",
+        kickerPublic: "پروژه های عمومی",
+        kickerCapabilities: "توانمندی ها",
         kickerProcess: "فرآیند همکاری",
         kickerContact: "تماس",
-        navWork: "نمونه‌کارها",
-        navCapabilities: "توانمندی‌ها",
+        navWork: "نمونه کارها",
+        navCapabilities: "توانمندی ها",
         navProcess: "فرآیند",
         navContact: "تماس",
         hireMe: "گفتگو درباره پروژه",
         availability: "آماده همکاری ریموت، فریلنس و قراردادی",
         heroTitle:
-          'من <span class="accent">محصولات اندرویدی مطمئن</span> برای استفاده واقعی می‌سازم.',
+          'من <span class="accent">محصولات اندرویدی مطمئن</span> برای استفاده واقعی می سازم.',
         heroDescription:
-          "توسعه‌دهنده اندروید با تمرکز بر Kotlin، Jetpack Compose، معماری تمیز، احراز هویت و یکپارچه‌سازی پایدار REST API.",
-        viewWork: "مشاهده نمونه‌کارها",
+          "توسعه دهنده اندروید با تمرکز بر Kotlin، Jetpack Compose، معماری تمیز، احراز هویت و یکپارچه سازی پایدار REST API.",
+        viewWork: "مشاهده نمونه کارها",
         discussProject: "گفتگو درباره پروژه",
         downloadCv: "دانلود رزومه فارسی",
         profileText:
-          "ساخت اپلیکیشن‌های قابل نگهداری اندروید با جریان‌های مطمئن محصول و تصمیم‌های فنی روشن.",
+          "ساخت اپلیکیشن های قابل نگهداری اندروید با جریان های مطمئن محصول و تصمیم های فنی روشن.",
         proofPrivate: "محصول خصوصی اندرویدی با ارائه ناشناس",
         proofPrimary: "زبان اصلی توسعه اندروید",
-        proofUi: "رابط‌های مدرن و اعلانی موبایل",
+        proofUi: "رابط های مدرن مبتنی بر Jetpack Compose",
         proofRemote: "آماده همکاری فریلنس و قراردادی",
-        workTitle: "محصولاتی ساخته‌شده برای محدودیت‌های واقعی.",
+        workTitle: "محصولات اندرویدی برای نیازها و محدودیت های واقعی.",
         workDescription:
-          "تجربه محصولات خصوصی به‌صورت مطالعه موردی ناشناس ارائه شده است. نام مشتری، رابط اختصاصی، برنامه داخلی و دارایی محرمانه عمداً نمایش داده نمی‌شوند.",
+          "تجربه محصولات خصوصی در قالب مطالعات موردی ناشناس ارائه شده اند. نام مشتری، صفحات اختصاصی، برنامه های داخلی و دارایی های محرمانه نمایش داده نمی شوند.",
         operationalBadge: "محصول عملیاتی اندروید",
-        operationalTitle: "پلتفرم حمل‌ونقل هوشمند برای جریان‌های اپراتوری",
+        operationalTitle: "پلتفرم حمل و نقل هوشمند برای جریان های اپراتوری",
         operationalSummary:
-          "اپلیکیشنی اندرویدی برای پشتیبانی از عملیات پرتکرار در محیط خدمات مرتبط با خودرو. محصول شامل شناسایی با کمک دوربین، پردازش سمت سرور، پرداخت و وضعیت‌های ساختاریافته اپلیکیشن است.",
+          "اپلیکیشنی اندرویدی برای پشتیبانی از عملیات پرتکرار در یک محیط خدماتی مرتبط با خودرو. این محصول شناسایی با کمک دوربین، پردازش سمت سرور، پرداخت و مدیریت ساختاریافته وضعیت های اپلیکیشن را ترکیب می کند.",
         roleLabel: "نقش",
         focusLabel: "تمرکز",
         environmentLabel: "محیط",
-        operationalRole: "توسعه و یکپارچه‌سازی اندروید",
+        operationalRole: "توسعه و یکپارچه سازی اندروید",
         operationalFocus: "پایداری و سرعت اپراتور",
         operationalEnvironment: "سیستم خصوصی عملیاتی",
         operationalFeature1: "شناسایی با کمک دوربین و انتقال تصویر",
         operationalFeature2:
           "احراز هویت، مدیریت نشست و منطق تلاش مجدد درخواست",
-        operationalFeature3: "جریان‌های پرداخت و وضعیت عملیات",
-        operationalFeature4: "رابط سریع و قابل استفاده مجدد Jetpack Compose",
-        confidentialNote:
-          "تصویر کاملاً مفهومی است و هیچ صفحه، لوگو، نام محصول یا طراحی اختصاصی مشتری را بازسازی نمی‌کند.",
+        operationalFeature3: "جریان های پرداخت و وضعیت عملیات",
+        operationalFeature4: "رابط سریع و قابل استفاده مجدد با Jetpack Compose",
+        visualDisclaimer:
+          "تصاویر رابط، ماکاپ های مستقل این پرتفولیو هستند و هیچ صفحه ای از محصولات خصوصی را بازسازی نمی کنند.",
         labelSecure: "نشست امن",
         labelVehicle: "جریان خودرو",
         labelStatus: "وضعیت API",
@@ -2436,64 +2441,64 @@
           "محصولی اندرویدی برای کاربران نهایی با تمرکز بر حساب کاربری، کیف پول و پرداخت، احراز هویت بیومتریک، امنیت مرتبط با خودرو و تجربه ساده پارکینگ.",
         consumerRole: "توسعه محصول اندروید",
         consumerFocus: "مسیرهای ساده و امن کاربر",
-        consumerEnvironment: "محصول خصوصی مصرف‌کننده",
+        consumerEnvironment: "محصول خصوصی مصرف کننده",
         consumerFeature1: "تجربه پرداخت مبتنی بر کیف پول و موجودی",
         consumerFeature2:
           "احراز هویت بیومتریک برای عملیات حساس منتخب",
-        consumerFeature3: "کامپوننت‌های بومی‌سازی‌شده و قابل استفاده مجدد Compose",
+        consumerFeature3: "کامپوننت های بومی سازی شده و قابل استفاده مجدد با Compose",
         consumerFeature4:
-          "وضعیت قابل پیش‌بینی رابط در عملیات شبکه",
+          "وضعیت قابل پیش بینی رابط در عملیات شبکه",
         labelWallet: "جریان کیف پول",
         labelBiometric: "دسترسی بیومتریک",
-        labelLocalized: "رابط بومی‌شده",
-        publicTitle: "پروژه‌هایی که مستقیماً قابل بررسی هستند.",
+        labelLocalized: "رابط بومی شده",
+        publicTitle: "پروژه هایی که مستقیماً قابل بررسی هستند.",
         publicDescription:
-          "مخزنهای عمومی برای نمایش تجربه API، ارائه فنی و ارتباط مؤثر درباره پروژه.",
+          "مخزن های عمومی برای نمایش توسعه API، ارائه فنی و مستندسازی پروژه ها.",
         cryptoText:
-          "API مبتنی بر پایتون برای آزمایش تحلیل بازار رمزارز و تولید سیگنال، همراه با تفکیک مسئولیت سرویس‌ها و جریان‌های پردازش داده.",
+          "API مبتنی بر پایتون برای آزمایش تحلیل بازار رمزارز و تولید سیگنال، همراه با تفکیک مسئولیت سرویس ها و جریان های پردازش داده.",
         portfolioText:
-          "پرتفولیوی واکنش‌گرا و دوزبانه برای ارائه تجربه فنی، مطالعات موردی ناشناس، خدمات حرفه‌ای و راه‌های تماس مستقیم.",
+          "پرتفولیوی واکنش گرا و دوزبانه برای ارائه تجربه فنی، مطالعات موردی ناشناس، خدمات حرفه ای و راه های تماس مستقیم.",
         viewRepository: "مشاهده مخزن",
         viewSource: "مشاهده کد",
         capabilitiesTitle: "خدمات متمرکز توسعه اندروید.",
         capabilitiesDescription:
-          "پشتیبانی از محصول جدید، اپلیکیشن موجود و جریان‌های فنی نیازمند معماری قابل نگهداری و یکپارچه‌سازی پایدار.",
+          "پشتیبانی از محصول جدید، اپلیکیشن موجود و جریان های فنی نیازمند معماری قابل نگهداری و یکپارچه سازی پایدار.",
         capability1Title: "توسعه محصول اندروید",
         capability1Text:
-          "پیاده‌سازی Kotlin و Jetpack Compose برای اپلیکیشن جدید، قابلیت‌ها و رابط‌های واکنش‌گرای موبایل.",
-        capability2Title: "یکپارچه‌سازی API و احراز هویت",
+          "پیاده سازی Kotlin و Jetpack Compose برای اپلیکیشن جدید، قابلیت ها و رابط های واکنش گرای موبایل.",
+        capability2Title: "یکپارچه سازی API و احراز هویت",
         capability2Text:
           "REST API، توکن دسترسی، جریان رفرش توکن، مدیریت نشست، تلاش مجدد و مدیریت ساختاریافته خطاهای شبکه.",
         capability3Title: "معماری و بازآرایی",
         capability3Text:
-          "بهبود تفکیک مسئولیت‌ها، کاهش وابستگی، بازطراحی جریان اپلیکیشن و ساخت کامپوننت‌های قابل استفاده مجدد Compose.",
+          "بهبود تفکیک مسئولیت ها، کاهش وابستگی، بازطراحی جریان اپلیکیشن و ساخت کامپوننت های قابل استفاده مجدد Compose.",
         capability4Title: "بهبود اپلیکیشن موجود",
         capability4Text:
-          "بررسی باگ، پیاده‌سازی قابلیت، بهبود وضعیت خطا و نگهداری کدبیس‌های اندرویدی موجود.",
+          "بررسی باگ، پیاده سازی قابلیت، بهبود وضعیت خطا و نگهداری کدبیس های اندرویدی موجود.",
         processTitle: "مسیر روشن از نیازمندی تا تحویل.",
         processDescription:
-          "فرآیندی کاربردی که هدف محصول، ریسک فنی و قابلیت نگهداری را در تمام مراحل پیاده‌سازی شفاف نگه می‌دارد.",
+          "فرآیندی کاربردی که هدف محصول، ریسک فنی و قابلیت نگهداری را در تمام مراحل پیاده سازی شفاف نگه می دارد.",
         process1Title: "درک مسئله",
         process1Text:
-          "شفاف‌سازی جریان کاربر، قوانین کسب‌وکار، رفتار API، محدودیت‌ها و تعریف اتمام کار.",
+          "شفاف سازی مسیر کاربر، قوانین کسب و کار، رفتار API، محدودیت ها و معیارهای تحویل.",
         process2Title: "ساختاربندی",
         process2Text:
-          "تعریف وضعیت، مسئولیت‌ها، جریان داده، رفتار خطا و مرزهای معماری.",
-        process3Title: "پیاده‌سازی",
+          "تعریف وضعیت، مسئولیت ها، جریان داده، رفتار خطا و مرزهای معماری.",
+        process3Title: "پیاده سازی",
         process3Text:
           "ساخت قابلیت با رابط قابل استفاده مجدد، اتصال مطمئن و مدیریت صریح خطا.",
         process4Title: "اعتبارسنجی",
         process4Text:
-          "بررسی شرایط مرزی، واکنش‌گرایی، وضعیت خطا، قابلیت نگهداری و نیازهای تحویل.",
+          "بررسی شرایط مرزی، واکنش گرایی، وضعیت خطا، قابلیت نگهداری و نیازهای تحویل.",
         contactTitle: "محصول اندرویدی برای ساخت یا بهبود دارید؟",
         contactDescription:
-          "مرحله فعلی محصول، چالش فنی یا محدوده قابلیت را ارسال کنید. برای همکاری ریموت، فریلنس و قراردادی آماده‌ام.",
+          "مرحله فعلی محصول، چالش فنی یا محدوده قابلیت را ارسال کنید. برای همکاری ریموت، فریلنس و قراردادی آماده ام.",
         sendEmail: "ارسال ایمیل",
         emailLabel: "ایمیل",
         phoneLabel: "تلفن",
         locationLabel: "موقعیت",
         locationValue: "ایران · آماده همکاری ریموت",
-        footerText: "پرتفولیوی توسعه‌دهنده اندروید"
+        footerText: "پرتفولیوی توسعه دهنده اندروید"
       }
     };
 
