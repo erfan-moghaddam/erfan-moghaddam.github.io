@@ -1690,10 +1690,12 @@
 
             <a
               class="button"
-              href="Erfan_Moghaddam_Android_Developer_CV.pdf"
-              download
+              href="Erfan_Moghaddam_Android_Developer_CV_EN.pdf"
+              download="Erfan_Moghaddam_Android_Developer_CV_EN.pdf"
+              data-resume-link
+              aria-label="Download English CV"
             >
-              <span data-i18n="downloadCv">Download CV</span>
+              <span data-i18n="downloadCv">Download English CV</span>
             </a>
           </div>
 
@@ -2283,7 +2285,7 @@
           "Android Developer specializing in Kotlin, Jetpack Compose, Clean Architecture, authentication, and resilient REST API integration.",
         viewWork: "View Selected Work",
         discussProject: "Discuss a Project",
-        downloadCv: "Download CV",
+        downloadCv: "Download English CV",
         profileText:
           "Building maintainable Android applications with reliable product flows and clear technical decisions.",
         proofPrivate: "Anonymized private Android products",
@@ -2398,7 +2400,7 @@
           "توسعه‌دهنده اندروید با تمرکز بر Kotlin، Jetpack Compose، معماری تمیز، احراز هویت و یکپارچه‌سازی پایدار REST API.",
         viewWork: "مشاهده نمونه‌کارها",
         discussProject: "گفتگو درباره پروژه",
-        downloadCv: "دانلود رزومه",
+        downloadCv: "دانلود رزومه فارسی",
         profileText:
           "ساخت اپلیکیشن‌های قابل نگهداری اندروید با جریان‌های مطمئن محصول و تصمیم‌های فنی روشن.",
         proofPrivate: "محصول خصوصی اندرویدی با ارائه ناشناس",
@@ -2504,6 +2506,44 @@
     const menuButton = document.getElementById("menuBtn");
     const closeMenuButton = document.getElementById("closeMenuBtn");
 
+    function getStoredValue(key, fallbackValue) {
+      try {
+        return window.localStorage.getItem(key) || fallbackValue;
+      } catch (error) {
+        return fallbackValue;
+      }
+    }
+
+    function setStoredValue(key, value) {
+      try {
+        window.localStorage.setItem(key, value);
+      } catch (error) {
+        // The page still works when browser storage is unavailable.
+      }
+    }
+
+    function updateResumeLinks(language) {
+      const resumeConfig =
+        language === "fa"
+          ? {
+              href: "Erfan_Moghaddam_Android_Developer_CV_FA.pdf",
+              filename: "Erfan_Moghaddam_Android_Developer_CV_FA.pdf",
+              label: "دانلود رزومه فارسی"
+            }
+          : {
+              href: "Erfan_Moghaddam_Android_Developer_CV_EN.pdf",
+              filename: "Erfan_Moghaddam_Android_Developer_CV_EN.pdf",
+              label: "Download English CV"
+            };
+
+      document.querySelectorAll("[data-resume-link]").forEach((link) => {
+        link.href = resumeConfig.href;
+        link.setAttribute("download", resumeConfig.filename);
+        link.setAttribute("aria-label", resumeConfig.label);
+        link.setAttribute("title", resumeConfig.label);
+      });
+    }
+
     function applyLanguage(language) {
       const dictionary = translations[language];
       const isPersian = language === "fa";
@@ -2527,7 +2567,8 @@
       });
 
       langButton.textContent = isPersian ? "EN" : "FA";
-      localStorage.setItem("portfolio_lang", language);
+      updateResumeLinks(language);
+      setStoredValue("portfolio_lang", language);
     }
 
     function applyTheme(theme) {
@@ -2538,7 +2579,7 @@
           ? '<path d="M20 15.5A8 8 0 0 1 8.5 4 8.5 8.5 0 1 0 20 15.5Z"></path>'
           : '<circle cx="12" cy="12" r="4"></circle><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"></path>';
 
-      localStorage.setItem("portfolio_theme", theme);
+      setStoredValue("portfolio_theme", theme);
     }
 
     function openMenu() {
@@ -2554,7 +2595,7 @@
     }
 
     langButton.addEventListener("click", () => {
-      const current = localStorage.getItem("portfolio_lang") || "en";
+      const current = root.lang === "fa" ? "fa" : "en";
       applyLanguage(current === "en" ? "fa" : "en");
     });
 
@@ -2632,11 +2673,11 @@
     window.addEventListener("scroll", updateProgress, { passive: true });
     updateProgress();
 
-    const storedTheme = localStorage.getItem("portfolio_theme");
+    const storedTheme = getStoredValue("portfolio_theme", "");
     const systemPrefersLight = window.matchMedia("(prefers-color-scheme: light)").matches;
 
     applyTheme(storedTheme || (systemPrefersLight ? "light" : "dark"));
-    applyLanguage(localStorage.getItem("portfolio_lang") || "en");
+    applyLanguage(getStoredValue("portfolio_lang", "en"));
   </script>
 </body>
 </html>
