@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
+<html lang="en" dir="ltr" data-theme="dark">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,15 +8,15 @@
 
   <meta
     name="description"
-    content="Android Developer specializing in Kotlin, Jetpack Compose, Clean Architecture, authentication, and REST API integration. Available for remote freelance and contract projects."
+    content="Android Developer specializing in Kotlin, Jetpack Compose, Clean Architecture, authentication, and resilient REST API integration. Available for remote freelance and contract projects."
   >
   <meta
     name="keywords"
     content="Android Developer, Kotlin, Jetpack Compose, Clean Architecture, MVVM, REST API, Mobile Developer, Freelance Android Developer"
   >
   <meta name="author" content="Erfan Moghaddam">
-  <meta name="theme-color" content="#070a10">
   <meta name="robots" content="index, follow">
+  <meta name="theme-color" content="#070a0f">
 
   <link rel="canonical" href="https://erfan-moghaddam.github.io/">
 
@@ -24,36 +24,80 @@
   <meta property="og:title" content="Erfan Moghaddam | Android Developer">
   <meta
     property="og:description"
-    content="Android Developer building reliable, maintainable, and API-driven mobile applications."
+    content="Android Developer building reliable, maintainable and API-driven mobile products."
   >
   <meta property="og:url" content="https://erfan-moghaddam.github.io/">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link
-    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Vazirmatn:wght@400;500;600;700;800;900&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Vazirmatn:wght@400;500;600;700;800&display=swap"
     rel="stylesheet"
   >
 
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Erfan Moghaddam",
+    "jobTitle": "Android Developer",
+    "url": "https://erfan-moghaddam.github.io/",
+    "email": "mailto:erfanmusicmoghaddam@gmail.com",
+    "sameAs": [
+      "https://github.com/erfan-moghaddam",
+      "https://www.linkedin.com/in/erfan-moghaddam-co/"
+    ],
+    "knowsAbout": [
+      "Android Development",
+      "Kotlin",
+      "Jetpack Compose",
+      "Clean Architecture",
+      "MVVM",
+      "REST API Integration"
+    ]
+  }
+  </script>
+
   <style>
     :root {
-      --bg: #05070b;
-      --bg-soft: #090d14;
-      --panel: rgba(255, 255, 255, 0.045);
-      --panel-strong: rgba(255, 255, 255, 0.07);
-      --line: rgba(255, 255, 255, 0.09);
-      --text: #f4f7fb;
-      --muted: #a8b2c3;
-      --accent: #3ddc84;
-      --accent-2: #76e6a5;
-      --cyan: #68d7ff;
-      --warning: #ffd54a;
-      --danger: #ff7b85;
-      --max: 1180px;
-      --radius-xl: 34px;
-      --radius-lg: 26px;
-      --radius-md: 18px;
-      --shadow: 0 30px 90px rgba(0, 0, 0, 0.42);
+      --bg: #07090d;
+      --bg-elevated: #0d1118;
+      --surface: rgba(255, 255, 255, 0.045);
+      --surface-strong: rgba(255, 255, 255, 0.072);
+      --line: rgba(255, 255, 255, 0.105);
+      --line-soft: rgba(255, 255, 255, 0.065);
+      --text: #f5f7fa;
+      --muted: #a5afbf;
+      --muted-2: #7d8797;
+      --accent: #51df91;
+      --accent-soft: rgba(81, 223, 145, 0.1);
+      --accent-strong: #8ff0b8;
+      --blue: #67d5ff;
+      --warning: #f3cf61;
+      --shadow: 0 28px 80px rgba(0, 0, 0, 0.36);
+      --max: 1220px;
+      --radius-xl: 32px;
+      --radius-lg: 24px;
+      --radius-md: 17px;
+      --nav-height: 76px;
+    }
+
+    html[data-theme="light"] {
+      --bg: #f5f7f9;
+      --bg-elevated: #ffffff;
+      --surface: rgba(255, 255, 255, 0.68);
+      --surface-strong: rgba(255, 255, 255, 0.94);
+      --line: rgba(13, 22, 34, 0.13);
+      --line-soft: rgba(13, 22, 34, 0.075);
+      --text: #10151c;
+      --muted: #596575;
+      --muted-2: #7b8795;
+      --accent: #0da85a;
+      --accent-soft: rgba(13, 168, 90, 0.095);
+      --accent-strong: #087f46;
+      --blue: #0784b8;
+      --warning: #9a7200;
+      --shadow: 0 24px 70px rgba(30, 50, 70, 0.12);
     }
 
     * {
@@ -62,7 +106,7 @@
 
     html {
       scroll-behavior: smooth;
-      scroll-padding-top: 92px;
+      scroll-padding-top: calc(var(--nav-height) + 24px);
     }
 
     body {
@@ -70,10 +114,11 @@
       color: var(--text);
       font-family: "Inter", "Vazirmatn", system-ui, sans-serif;
       background:
-        radial-gradient(circle at 10% 0%, rgba(61, 220, 132, 0.09), transparent 22%),
-        radial-gradient(circle at 92% 12%, rgba(104, 215, 255, 0.08), transparent 22%),
-        linear-gradient(180deg, var(--bg), var(--bg-soft));
+        radial-gradient(circle at 6% 0%, rgba(81, 223, 145, 0.09), transparent 22%),
+        radial-gradient(circle at 96% 14%, rgba(103, 213, 255, 0.075), transparent 22%),
+        var(--bg);
       overflow-x: hidden;
+      transition: background 0.25s ease, color 0.25s ease;
     }
 
     body.fa {
@@ -94,6 +139,11 @@
       font: inherit;
     }
 
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
     .container {
       width: min(calc(100% - 36px), var(--max));
       margin: 0 auto;
@@ -106,12 +156,12 @@
       top: 10px;
       left: 10px;
       z-index: 999;
-      padding: 12px 16px;
+      padding: 11px 15px;
       border-radius: 12px;
-      background: var(--accent);
       color: #041008;
+      background: var(--accent);
       font-weight: 800;
-      transform: translateY(-140%);
+      transform: translateY(-150%);
       transition: transform 0.2s ease;
     }
 
@@ -123,78 +173,35 @@
       position: fixed;
       top: 0;
       left: 0;
-      z-index: 200;
+      z-index: 300;
       width: 100%;
       height: 3px;
       transform: scaleX(0);
       transform-origin: left center;
-      background: linear-gradient(90deg, var(--accent), var(--cyan));
-      box-shadow: 0 0 18px rgba(61, 220, 132, 0.38);
+      background: linear-gradient(90deg, var(--accent), var(--blue));
     }
 
-    .ambient {
+    .noise {
       position: fixed;
       inset: 0;
-      pointer-events: none;
       z-index: 0;
-      overflow: hidden;
-    }
-
-    .orb {
-      position: absolute;
-      width: 250px;
-      height: 250px;
-      border-radius: 50%;
-      filter: blur(90px);
-      opacity: 0.2;
-      animation: float 14s ease-in-out infinite;
-    }
-
-    .orb.one {
-      top: 5%;
-      right: 4%;
-      background: rgba(61, 220, 132, 0.32);
-    }
-
-    .orb.two {
-      top: 42%;
-      left: 2%;
-      width: 190px;
-      height: 190px;
-      background: rgba(104, 215, 255, 0.24);
-      animation-delay: -4s;
-    }
-
-    .orb.three {
-      right: 14%;
-      bottom: 4%;
-      width: 170px;
-      height: 170px;
-      background: rgba(61, 220, 132, 0.18);
-      animation-delay: -8s;
-    }
-
-    @keyframes float {
-      0%,
-      100% {
-        transform: translate(0, 0);
-      }
-      50% {
-        transform: translate(14px, -24px);
-      }
+      pointer-events: none;
+      opacity: 0.045;
+      background-image:
+        url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.45'/%3E%3C/svg%3E");
     }
 
     .topbar {
       position: sticky;
       top: 0;
       z-index: 100;
-      border-bottom: 1px solid var(--line);
-      background: rgba(5, 7, 11, 0.74);
+      border-bottom: 1px solid var(--line-soft);
+      background: color-mix(in srgb, var(--bg) 78%, transparent);
       backdrop-filter: blur(18px);
     }
 
     .nav {
-      min-height: 78px;
+      min-height: var(--nav-height);
       display: flex;
       align-items: center;
       justify-content: space-between;
@@ -204,51 +211,53 @@
     .brand {
       display: flex;
       align-items: center;
-      gap: 13px;
+      gap: 12px;
       min-width: 0;
     }
 
-    .brand-mark {
-      width: 46px;
-      height: 46px;
+    .brand-monogram {
+      width: 42px;
+      height: 42px;
       display: grid;
       place-items: center;
       flex: 0 0 auto;
-      border-radius: 16px;
-      color: #041008;
-      font-weight: 900;
-      background: linear-gradient(135deg, var(--accent), var(--accent-2));
-      box-shadow: 0 14px 35px rgba(61, 220, 132, 0.22);
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      color: var(--text);
+      background: var(--surface);
+      font-size: 14px;
+      font-weight: 800;
     }
 
     .brand-name {
-      font-size: 17px;
-      font-weight: 900;
+      font-size: 15px;
+      font-weight: 800;
       white-space: nowrap;
     }
 
     .brand-role {
       margin-top: 2px;
-      color: var(--muted);
-      font-size: 12px;
+      color: var(--muted-2);
+      font-size: 11px;
+      white-space: nowrap;
     }
 
     .navlinks {
       display: flex;
       align-items: center;
-      gap: 20px;
+      gap: 22px;
     }
 
     .navlinks a {
       position: relative;
       color: var(--muted);
-      font-size: 14px;
-      font-weight: 600;
+      font-size: 13px;
+      font-weight: 650;
       transition: color 0.2s ease;
     }
 
     .navlinks a:hover,
-    .navlinks a:focus-visible {
+    .navlinks a.active {
       color: var(--text);
     }
 
@@ -256,38 +265,35 @@
       content: "";
       position: absolute;
       right: 0;
-      bottom: -10px;
+      bottom: -12px;
       left: 0;
       height: 2px;
       transform: scaleX(0);
-      background: linear-gradient(90deg, transparent, var(--accent), transparent);
+      background: var(--accent);
       transition: transform 0.2s ease;
     }
 
-    .navlinks a:hover::after,
-    .navlinks a:focus-visible::after {
+    .navlinks a.active::after,
+    .navlinks a:hover::after {
       transform: scaleX(1);
     }
 
     .nav-actions {
       display: flex;
       align-items: center;
-      gap: 9px;
+      gap: 8px;
     }
 
-    .nav-btn {
+    .icon-btn,
+    .nav-cta {
       min-height: 42px;
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      gap: 8px;
-      padding: 0 14px;
       border: 1px solid var(--line);
       border-radius: 999px;
       color: var(--text);
-      background: rgba(255, 255, 255, 0.035);
-      font-size: 13px;
-      font-weight: 800;
+      background: var(--surface);
       cursor: pointer;
       transition:
         transform 0.2s ease,
@@ -295,30 +301,49 @@
         background 0.2s ease;
     }
 
-    .nav-btn:hover,
-    .nav-btn:focus-visible {
+    .icon-btn {
+      width: 42px;
+      padding: 0;
+    }
+
+    .icon-btn svg {
+      width: 18px;
+      height: 18px;
+      fill: none;
+      stroke: currentColor;
+      stroke-width: 1.8;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+
+    .nav-cta {
+      padding: 0 15px;
+      color: #041008;
+      border-color: transparent;
+      background: var(--accent);
+      font-size: 12px;
+      font-weight: 800;
+    }
+
+    .icon-btn:hover,
+    .nav-cta:hover {
       transform: translateY(-2px);
-      border-color: rgba(61, 220, 132, 0.28);
-      background: rgba(255, 255, 255, 0.065);
+      border-color: color-mix(in srgb, var(--accent) 40%, var(--line));
     }
 
     .menu-btn {
       display: none;
-      width: 42px;
-      padding: 0;
     }
 
     .mobile-menu {
       position: fixed;
       inset: 0;
-      z-index: 150;
+      z-index: 160;
       visibility: hidden;
       opacity: 0;
-      background: rgba(5, 7, 11, 0.68);
+      background: rgba(4, 7, 11, 0.68);
       backdrop-filter: blur(10px);
-      transition:
-        opacity 0.25s ease,
-        visibility 0.25s ease;
+      transition: 0.25s ease;
     }
 
     .mobile-menu.open {
@@ -330,11 +355,11 @@
       position: absolute;
       top: 0;
       right: 0;
-      width: min(86vw, 350px);
+      width: min(86vw, 360px);
       height: 100%;
       padding: 22px;
       border-left: 1px solid var(--line);
-      background: linear-gradient(180deg, #0b1018, #080c12);
+      background: var(--bg-elevated);
       transform: translateX(100%);
       transition: transform 0.3s ease;
     }
@@ -343,7 +368,7 @@
       right: auto;
       left: 0;
       border-right: 1px solid var(--line);
-      border-left: 0;
+      border-left: none;
       transform: translateX(-100%);
     }
 
@@ -355,7 +380,7 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
-      gap: 14px;
+      gap: 12px;
     }
 
     .mobile-links {
@@ -365,112 +390,103 @@
     }
 
     .mobile-links a {
-      padding: 14px 16px;
+      padding: 14px 15px;
       border: 1px solid var(--line);
-      border-radius: 16px;
+      border-radius: 15px;
       color: var(--muted);
-      background: rgba(255, 255, 255, 0.03);
-    }
-
-    .mobile-links a:hover {
-      color: var(--text);
-      border-color: rgba(61, 220, 132, 0.25);
+      background: var(--surface);
     }
 
     .section {
+      padding: 82px 0;
       position: relative;
-      padding: 68px 0;
     }
 
-    .section-head {
-      display: flex;
-      align-items: end;
-      justify-content: space-between;
-      gap: 24px;
-      margin-bottom: 28px;
-    }
-
-    .section-label {
+    .section-kicker {
       display: inline-flex;
       align-items: center;
       gap: 8px;
-      padding: 8px 12px;
-      margin-bottom: 10px;
-      border: 1px solid rgba(61, 220, 132, 0.18);
-      border-radius: 999px;
+      margin-bottom: 16px;
       color: var(--accent);
-      background: rgba(61, 220, 132, 0.07);
       font-size: 12px;
       font-weight: 800;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
     }
 
-    .section-head h2 {
+    .section-kicker::before {
+      content: "";
+      width: 24px;
+      height: 1px;
+      background: var(--accent);
+    }
+
+    .section-heading {
+      display: grid;
+      grid-template-columns: minmax(0, 0.8fr) minmax(320px, 1fr);
+      align-items: end;
+      gap: 42px;
+      margin-bottom: 34px;
+    }
+
+    .section-heading h2 {
       margin: 0;
-      font-size: clamp(30px, 4vw, 44px);
-      line-height: 1.08;
-      letter-spacing: -1px;
+      font-size: clamp(34px, 4.6vw, 58px);
+      line-height: 1.03;
+      letter-spacing: -0.045em;
     }
 
-    body.fa .section-head h2,
-    body.fa .hero h1 {
+    body.fa .section-heading h2,
+    body.fa .hero-title {
       letter-spacing: 0;
     }
 
-    .section-head p {
-      max-width: 680px;
+    .section-heading p {
+      max-width: 720px;
       margin: 0;
       color: var(--muted);
       font-size: 15px;
       line-height: 1.9;
     }
 
-    .glass {
-      border: 1px solid var(--line);
-      background:
-        linear-gradient(180deg, rgba(255, 255, 255, 0.052), rgba(255, 255, 255, 0.025));
-      box-shadow: var(--shadow);
-      backdrop-filter: blur(14px);
-    }
-
     .hero {
-      position: relative;
-      padding: 94px 0 52px;
+      padding: 92px 0 70px;
     }
 
     .hero-grid {
       display: grid;
-      grid-template-columns: minmax(0, 1fr) minmax(420px, 0.86fr);
+      grid-template-columns: minmax(0, 1.05fr) minmax(360px, 0.72fr);
       align-items: center;
-      gap: 42px;
+      gap: 60px;
     }
 
-    .eyebrow {
+    .availability {
       display: inline-flex;
       align-items: center;
       gap: 9px;
-      padding: 9px 13px;
-      border: 1px solid rgba(61, 220, 132, 0.18);
+      padding: 8px 12px;
+      border: 1px solid color-mix(in srgb, var(--accent) 26%, transparent);
       border-radius: 999px;
       color: var(--accent);
-      background: rgba(61, 220, 132, 0.07);
-      font-size: 13px;
-      font-weight: 800;
+      background: var(--accent-soft);
+      font-size: 12px;
+      font-weight: 750;
     }
 
-    .status-dot {
-      width: 8px;
-      height: 8px;
+    .availability-dot {
+      width: 7px;
+      height: 7px;
       border-radius: 50%;
       background: var(--accent);
-      box-shadow: 0 0 14px rgba(61, 220, 132, 0.72);
-      animation: pulse 2.4s ease-in-out infinite;
+      box-shadow: 0 0 14px color-mix(in srgb, var(--accent) 72%, transparent);
+      animation: breathe 2.2s ease-in-out infinite;
     }
 
-    @keyframes pulse {
+    @keyframes breathe {
       0%,
       100% {
-        opacity: 0.55;
-        transform: scale(0.85);
+        opacity: 0.5;
+        transform: scale(0.8);
       }
       50% {
         opacity: 1;
@@ -478,697 +494,730 @@
       }
     }
 
-    .hero h1 {
-      max-width: 760px;
-      margin: 20px 0 18px;
-      font-size: clamp(46px, 7vw, 82px);
-      line-height: 1.02;
-      letter-spacing: -2.4px;
+    .hero-title {
+      margin: 22px 0 20px;
+      font-size: clamp(54px, 7.8vw, 100px);
+      line-height: 0.96;
+      letter-spacing: -0.06em;
+      text-wrap: balance;
     }
 
-    .hero-highlight {
+    .hero-title .accent {
       color: transparent;
-      background: linear-gradient(90deg, var(--accent), var(--cyan));
+      background: linear-gradient(90deg, var(--accent), var(--blue));
       background-clip: text;
       -webkit-background-clip: text;
     }
 
-    .hero p {
+    .hero-description {
       max-width: 720px;
       margin: 0;
       color: var(--muted);
       font-size: 18px;
-      line-height: 1.95;
+      line-height: 1.9;
     }
 
-    .cta {
+    .hero-actions {
       display: flex;
       flex-wrap: wrap;
-      gap: 12px;
+      gap: 11px;
       margin-top: 30px;
     }
 
-    .btn {
-      min-height: 54px;
+    .button {
+      min-height: 53px;
       display: inline-flex;
       align-items: center;
       justify-content: center;
       gap: 9px;
-      padding: 0 19px;
+      padding: 0 18px;
       border: 1px solid var(--line);
-      border-radius: 16px;
-      font-size: 14px;
-      font-weight: 900;
+      border-radius: 15px;
+      color: var(--text);
+      background: var(--surface);
+      font-size: 13px;
+      font-weight: 800;
       transition:
-        transform 0.22s ease,
-        border-color 0.22s ease,
-        background 0.22s ease,
-        box-shadow 0.22s ease;
+        transform 0.2s ease,
+        border-color 0.2s ease,
+        background 0.2s ease;
     }
 
-    .btn:hover,
-    .btn:focus-visible {
+    .button svg {
+      width: 17px;
+      height: 17px;
+      fill: none;
+      stroke: currentColor;
+      stroke-width: 1.8;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+
+    .button:hover {
       transform: translateY(-3px);
-      border-color: rgba(61, 220, 132, 0.28);
+      border-color: color-mix(in srgb, var(--accent) 38%, var(--line));
     }
 
-    .btn.primary {
+    .button.primary {
       color: #041008;
       border-color: transparent;
-      background: linear-gradient(135deg, var(--accent), var(--accent-2));
-      box-shadow: 0 15px 34px rgba(61, 220, 132, 0.22);
+      background: var(--accent);
+      box-shadow: 0 16px 36px color-mix(in srgb, var(--accent) 22%, transparent);
     }
 
-    .btn.secondary {
-      background: rgba(255, 255, 255, 0.035);
-    }
-
-    .hero-note {
+    .hero-meta {
       display: flex;
       flex-wrap: wrap;
       gap: 10px 18px;
-      margin-top: 22px;
-      color: #cbd3df;
-      font-size: 13px;
-    }
-
-    .hero-note span {
-      display: inline-flex;
-      align-items: center;
-      gap: 7px;
-    }
-
-    .hero-note span::before {
-      content: "";
-      width: 6px;
-      height: 6px;
-      border-radius: 50%;
-      background: var(--accent);
-    }
-
-    .hero-card {
-      position: relative;
-      overflow: hidden;
-      padding: 22px;
-      border-radius: var(--radius-xl);
-    }
-
-    .hero-card::before {
-      content: "";
-      position: absolute;
-      inset: -30% auto auto -12%;
-      width: 240px;
-      height: 240px;
-      border-radius: 50%;
-      background: radial-gradient(circle, rgba(61, 220, 132, 0.2), transparent 68%);
-      filter: blur(20px);
-    }
-
-    .identity-panel {
-      position: relative;
-      min-height: 450px;
-      display: grid;
-      grid-template-rows: 1fr auto;
-      overflow: hidden;
-      border: 1px solid rgba(255, 255, 255, 0.07);
-      border-radius: 28px;
-      background:
-        radial-gradient(circle at 75% 20%, rgba(104, 215, 255, 0.1), transparent 30%),
-        radial-gradient(circle at 18% 78%, rgba(61, 220, 132, 0.11), transparent 28%),
-        linear-gradient(180deg, #101722, #090e15);
-    }
-
-    .identity-visual {
-      position: relative;
-      display: grid;
-      place-items: center;
-      min-height: 320px;
-      padding: 30px;
-    }
-
-    .identity-ring {
-      position: relative;
-      width: 218px;
-      height: 218px;
-      display: grid;
-      place-items: center;
-      border: 1px solid rgba(61, 220, 132, 0.24);
-      border-radius: 50%;
-      box-shadow:
-        0 0 0 18px rgba(61, 220, 132, 0.035),
-        0 0 0 42px rgba(104, 215, 255, 0.025);
-    }
-
-    .identity-ring::before,
-    .identity-ring::after {
-      content: "";
-      position: absolute;
-      inset: -11px;
-      border: 1px dashed rgba(104, 215, 255, 0.26);
-      border-radius: 50%;
-      animation: spin 18s linear infinite;
-    }
-
-    .identity-ring::after {
-      inset: 20px;
-      border-color: rgba(61, 220, 132, 0.22);
-      animation-direction: reverse;
-      animation-duration: 13s;
-    }
-
-    @keyframes spin {
-      to {
-        transform: rotate(360deg);
-      }
-    }
-
-    .initials {
-      width: 138px;
-      height: 138px;
-      display: grid;
-      place-items: center;
-      border-radius: 42px;
-      color: #041008;
-      background: linear-gradient(135deg, var(--accent), #9cf1bd);
-      box-shadow: 0 28px 55px rgba(61, 220, 132, 0.24);
-      font-size: 48px;
-      font-weight: 900;
-      letter-spacing: -3px;
-    }
-
-    .floating-chip {
-      position: absolute;
-      padding: 10px 12px;
-      border: 1px solid rgba(255, 255, 255, 0.1);
-      border-radius: 13px;
-      color: #eaf0f8;
-      background: rgba(8, 13, 19, 0.74);
-      backdrop-filter: blur(10px);
+      margin-top: 24px;
+      color: var(--muted-2);
       font-size: 12px;
-      font-weight: 800;
-      box-shadow: 0 12px 24px rgba(0, 0, 0, 0.24);
     }
 
-    .chip-one {
-      top: 54px;
-      left: 28px;
-    }
-
-    .chip-two {
-      top: 92px;
-      right: 22px;
-    }
-
-    .chip-three {
-      bottom: 46px;
-      left: 30px;
-    }
-
-    .chip-four {
-      right: 26px;
-      bottom: 34px;
-    }
-
-    .identity-copy {
-      position: relative;
-      z-index: 2;
-      padding: 20px;
-      border-top: 1px solid var(--line);
-      background: rgba(7, 11, 17, 0.72);
-      backdrop-filter: blur(12px);
-    }
-
-    .identity-copy strong {
-      display: block;
-      margin-bottom: 5px;
-      font-size: 20px;
-    }
-
-    .identity-copy p {
-      margin: 0;
-      color: var(--muted);
-      font-size: 13px;
-      line-height: 1.7;
-    }
-
-    .grid-3,
-    .grid-2,
-    .services-grid,
-    .contact-grid {
-      display: grid;
-      gap: 16px;
-    }
-
-    .grid-3 {
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-    }
-
-    .grid-2,
-    .contact-grid {
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-    }
-
-    .services-grid {
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-    }
-
-    .card {
-      padding: 24px;
-      border-radius: var(--radius-lg);
-      transition:
-        transform 0.24s ease,
-        border-color 0.24s ease,
-        box-shadow 0.24s ease;
-    }
-
-    .card:hover {
-      transform: translateY(-7px);
-      border-color: rgba(61, 220, 132, 0.22);
-      box-shadow: 0 24px 56px rgba(0, 0, 0, 0.36);
-    }
-
-    .icon-box {
-      width: 54px;
-      height: 54px;
-      display: grid;
-      place-items: center;
-      border: 1px solid rgba(61, 220, 132, 0.16);
-      border-radius: 17px;
-      color: var(--accent);
-      background: rgba(61, 220, 132, 0.075);
-      font-size: 22px;
-    }
-
-    .card h3 {
-      margin: 15px 0 8px;
-      font-size: 20px;
-      line-height: 1.45;
-    }
-
-    .card p {
-      margin: 0;
-      color: var(--muted);
-      font-size: 14px;
-      line-height: 1.9;
-    }
-
-    .tags {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-      margin-top: 16px;
-    }
-
-    .tag {
-      padding: 10px 12px;
-      border: 1px solid var(--line);
-      border-radius: 13px;
-      color: #e7edf6;
-      background: rgba(255, 255, 255, 0.03);
-      font-size: 13px;
-      font-weight: 700;
-    }
-
-    .project {
-      overflow: hidden;
-      padding: 28px;
-      border-radius: var(--radius-xl);
-    }
-
-    .project + .project {
-      margin-top: 18px;
-    }
-
-    .project-grid {
-      display: grid;
-      grid-template-columns: minmax(0, 1fr) minmax(360px, 0.75fr);
-      align-items: center;
-      gap: 26px;
-    }
-
-    .project-badge {
+    .hero-meta span {
       display: inline-flex;
       align-items: center;
       gap: 8px;
-      padding: 8px 11px;
-      border: 1px solid rgba(255, 213, 74, 0.17);
-      border-radius: 999px;
-      color: var(--warning);
-      background: rgba(255, 213, 74, 0.06);
-      font-size: 12px;
-      font-weight: 800;
     }
 
-    .project h3 {
-      margin: 14px 0 10px;
-      font-size: clamp(28px, 4vw, 39px);
-      line-height: 1.12;
-      letter-spacing: -0.8px;
-    }
-
-    body.fa .project h3 {
-      letter-spacing: 0;
-    }
-
-    .project-copy > p {
-      margin: 0;
-      color: var(--muted);
-      font-size: 15px;
-      line-height: 1.95;
-    }
-
-    .feature-list {
-      display: grid;
-      gap: 10px;
-      margin: 20px 0;
-    }
-
-    .feature-item {
-      display: flex;
-      align-items: flex-start;
-      gap: 10px;
-      color: #e9eef6;
-      font-size: 14px;
-      line-height: 1.75;
-    }
-
-    .feature-item::before {
-      content: "✓";
-      width: 22px;
-      height: 22px;
-      display: grid;
-      place-items: center;
-      flex: 0 0 auto;
-      margin-top: 1px;
-      border-radius: 7px;
-      color: #041008;
+    .hero-meta span::before {
+      content: "";
+      width: 5px;
+      height: 5px;
+      border-radius: 50%;
       background: var(--accent);
-      font-size: 12px;
-      font-weight: 900;
     }
 
-    .confidential-note {
-      margin-top: 18px;
-      padding: 13px 15px;
-      border: 1px solid rgba(255, 213, 74, 0.14);
-      border-radius: 15px;
-      color: #d9d2b0;
-      background: rgba(255, 213, 74, 0.045);
-      font-size: 12px;
-      line-height: 1.7;
-    }
-
-    .mockup-stage {
+    .profile-card {
       position: relative;
-      min-height: 470px;
-      display: grid;
-      place-items: center;
-      padding: 22px;
       overflow: hidden;
-      border: 1px solid rgba(255, 255, 255, 0.07);
-      border-radius: 28px;
-      background:
-        radial-gradient(circle at 50% 50%, rgba(61, 220, 132, 0.09), transparent 36%),
-        linear-gradient(180deg, #0d141e, #080d14);
+      padding: 18px;
+      border: 1px solid var(--line);
+      border-radius: 36px;
+      background: var(--surface);
+      box-shadow: var(--shadow);
     }
 
-    .mockup-stage.blue {
-      background:
-        radial-gradient(circle at 50% 50%, rgba(104, 215, 255, 0.08), transparent 36%),
-        linear-gradient(180deg, #0d141e, #080d14);
-    }
-
-    .phone {
-      position: relative;
-      width: min(255px, 82%);
-      padding: 10px;
-      border: 1px solid rgba(255, 255, 255, 0.13);
-      border-radius: 38px;
-      background: #06090e;
-      box-shadow: 0 34px 65px rgba(0, 0, 0, 0.48);
-      transform: rotateY(-7deg) rotateX(3deg);
-    }
-
-    .phone::before {
+    .profile-card::before {
       content: "";
       position: absolute;
-      top: 10px;
-      left: 50%;
-      z-index: 3;
-      width: 78px;
-      height: 20px;
-      border-radius: 0 0 14px 14px;
-      background: #06090e;
-      transform: translateX(-50%);
+      top: -80px;
+      right: -50px;
+      width: 230px;
+      height: 230px;
+      border-radius: 50%;
+      background: radial-gradient(circle, color-mix(in srgb, var(--accent) 24%, transparent), transparent 68%);
+      filter: blur(14px);
     }
 
-    .screen {
-      min-height: 430px;
+    .profile-frame {
+      position: relative;
+      min-height: 490px;
       overflow: hidden;
-      border-radius: 29px;
+      border: 1px solid var(--line-soft);
+      border-radius: 27px;
       background:
-        radial-gradient(circle at 80% 0%, rgba(61, 220, 132, 0.12), transparent 26%),
-        linear-gradient(180deg, #101823, #0b1119);
+        linear-gradient(180deg, transparent 46%, rgba(5, 8, 12, 0.92)),
+        url("assets/profile.jpg") center 20% / cover no-repeat;
     }
 
-    .screen.blue {
+    html[data-theme="light"] .profile-frame {
       background:
-        radial-gradient(circle at 80% 0%, rgba(104, 215, 255, 0.12), transparent 26%),
-        linear-gradient(180deg, #101823, #0b1119);
+        linear-gradient(180deg, transparent 42%, rgba(245, 247, 249, 0.94)),
+        url("assets/profile.jpg") center 20% / cover no-repeat;
     }
 
-    .screen-content {
-      padding: 34px 16px 18px;
-    }
-
-    .screen-title {
-      width: 66%;
-      height: 12px;
-      margin-bottom: 9px;
-      border-radius: 999px;
-      background: rgba(255, 255, 255, 0.85);
-    }
-
-    .screen-subtitle {
-      width: 44%;
-      height: 8px;
-      border-radius: 999px;
-      background: rgba(255, 255, 255, 0.22);
-    }
-
-    .screen-card {
-      margin-top: 18px;
-      padding: 14px;
-      border: 1px solid rgba(255, 255, 255, 0.08);
-      border-radius: 18px;
-      background: rgba(255, 255, 255, 0.045);
-    }
-
-    .screen-card.accent {
-      border-color: rgba(61, 220, 132, 0.16);
-      background: rgba(61, 220, 132, 0.075);
-    }
-
-    .screen.blue .screen-card.accent {
-      border-color: rgba(104, 215, 255, 0.16);
-      background: rgba(104, 215, 255, 0.07);
-    }
-
-    .screen-row {
+    .profile-topline {
+      position: absolute;
+      top: 18px;
+      right: 18px;
+      left: 18px;
       display: flex;
       align-items: center;
       justify-content: space-between;
-      gap: 10px;
+      gap: 12px;
     }
 
-    .mini-icon {
-      width: 36px;
-      height: 36px;
+    .profile-code {
+      padding: 9px 11px;
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      border-radius: 12px;
+      color: white;
+      background: rgba(4, 8, 12, 0.56);
+      backdrop-filter: blur(10px);
+      font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+      font-size: 11px;
+      font-weight: 700;
+    }
+
+    .profile-copy {
+      position: absolute;
+      right: 22px;
+      bottom: 22px;
+      left: 22px;
+    }
+
+    .profile-copy h2 {
+      margin: 0 0 7px;
+      font-size: 28px;
+      letter-spacing: -0.04em;
+    }
+
+    .profile-copy p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.75;
+    }
+
+    .proof-strip {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 1px;
+      margin-top: 42px;
+      overflow: hidden;
+      border: 1px solid var(--line);
+      border-radius: 20px;
+      background: var(--line);
+    }
+
+    .proof-item {
+      min-height: 110px;
+      padding: 20px;
+      background: var(--bg-elevated);
+    }
+
+    .proof-item strong {
+      display: block;
+      margin-bottom: 6px;
+      color: var(--text);
+      font-size: 20px;
+    }
+
+    .proof-item span {
+      color: var(--muted);
+      font-size: 12px;
+      line-height: 1.65;
+    }
+
+    .work-list {
+      display: grid;
+      gap: 18px;
+    }
+
+    .case-study {
+      position: relative;
+      overflow: hidden;
+      display: grid;
+      grid-template-columns: minmax(0, 0.9fr) minmax(360px, 0.72fr);
+      gap: 30px;
+      padding: 30px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius-xl);
+      background: var(--surface);
+      transition:
+        transform 0.25s ease,
+        border-color 0.25s ease,
+        box-shadow 0.25s ease;
+    }
+
+    .case-study:hover {
+      transform: translateY(-6px);
+      border-color: color-mix(in srgb, var(--accent) 28%, var(--line));
+      box-shadow: var(--shadow);
+    }
+
+    .case-index {
+      color: var(--muted-2);
+      font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+      font-size: 12px;
+    }
+
+    .case-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      margin-top: 18px;
+      padding: 7px 10px;
+      border: 1px solid color-mix(in srgb, var(--warning) 24%, transparent);
+      border-radius: 999px;
+      color: var(--warning);
+      background: color-mix(in srgb, var(--warning) 7%, transparent);
+      font-size: 11px;
+      font-weight: 750;
+    }
+
+    .case-study h3 {
+      max-width: 680px;
+      margin: 18px 0 12px;
+      font-size: clamp(28px, 4vw, 45px);
+      line-height: 1.08;
+      letter-spacing: -0.045em;
+    }
+
+    body.fa .case-study h3 {
+      letter-spacing: 0;
+    }
+
+    .case-summary {
+      max-width: 740px;
+      margin: 0;
+      color: var(--muted);
+      font-size: 15px;
+      line-height: 1.9;
+    }
+
+    .case-details {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 12px;
+      margin-top: 24px;
+    }
+
+    .case-detail {
+      padding-top: 12px;
+      border-top: 1px solid var(--line);
+    }
+
+    .case-detail strong {
+      display: block;
+      margin-bottom: 5px;
+      color: var(--text);
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+
+    .case-detail span {
+      color: var(--muted);
+      font-size: 12px;
+      line-height: 1.65;
+    }
+
+    .case-features {
+      display: grid;
+      gap: 9px;
+      margin-top: 22px;
+    }
+
+    .case-feature {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      color: #dfe6ef;
+      font-size: 13px;
+      line-height: 1.7;
+    }
+
+    html[data-theme="light"] .case-feature {
+      color: #26313e;
+    }
+
+    .case-feature::before {
+      content: "";
+      width: 7px;
+      height: 7px;
+      flex: 0 0 auto;
+      margin-top: 0.62em;
+      border-radius: 50%;
+      background: var(--accent);
+      box-shadow: 0 0 10px color-mix(in srgb, var(--accent) 36%, transparent);
+    }
+
+    .stack {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 22px;
+    }
+
+    .stack span {
+      padding: 8px 10px;
+      border: 1px solid var(--line);
+      border-radius: 11px;
+      color: var(--muted);
+      background: var(--surface);
+      font-size: 11px;
+      font-weight: 700;
+    }
+
+    .confidential {
+      margin-top: 18px;
+      color: var(--muted-2);
+      font-size: 11px;
+      line-height: 1.65;
+    }
+
+    .concept-stage {
+      position: relative;
+      min-height: 490px;
       display: grid;
       place-items: center;
-      border-radius: 11px;
-      color: var(--accent);
-      background: rgba(61, 220, 132, 0.1);
-      font-size: 16px;
+      overflow: hidden;
+      border: 1px solid var(--line-soft);
+      border-radius: 25px;
+      background:
+        radial-gradient(circle at 48% 42%, color-mix(in srgb, var(--accent) 14%, transparent), transparent 34%),
+        var(--bg-elevated);
     }
 
-    .screen.blue .mini-icon {
-      color: var(--cyan);
-      background: rgba(104, 215, 255, 0.1);
+    .concept-stage.blue {
+      background:
+        radial-gradient(circle at 48% 42%, color-mix(in srgb, var(--blue) 13%, transparent), transparent 34%),
+        var(--bg-elevated);
     }
 
-    .skeleton {
-      display: grid;
-      gap: 7px;
-      flex: 1;
+    .device {
+      position: relative;
+      width: min(250px, 78%);
+      padding: 9px;
+      border: 1px solid var(--line);
+      border-radius: 36px;
+      background: #05080c;
+      box-shadow: 0 32px 60px rgba(0, 0, 0, 0.42);
+      transform: rotate(-3deg);
     }
 
-    .skeleton span {
-      display: block;
-      height: 7px;
+    .device::before {
+      content: "";
+      position: absolute;
+      top: 9px;
+      left: 50%;
+      z-index: 3;
+      width: 72px;
+      height: 18px;
+      border-radius: 0 0 13px 13px;
+      background: #05080c;
+      transform: translateX(-50%);
+    }
+
+    .device-screen {
+      min-height: 430px;
+      padding: 36px 15px 16px;
+      overflow: hidden;
+      border-radius: 28px;
+      background:
+        radial-gradient(circle at 86% 0%, color-mix(in srgb, var(--accent) 14%, transparent), transparent 28%),
+        #0c131c;
+    }
+
+    .concept-stage.blue .device-screen {
+      background:
+        radial-gradient(circle at 86% 0%, color-mix(in srgb, var(--blue) 14%, transparent), transparent 28%),
+        #0c131c;
+    }
+
+    .ui-title {
+      width: 66%;
+      height: 12px;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.82);
+    }
+
+    .ui-subtitle {
+      width: 42%;
+      height: 8px;
+      margin-top: 8px;
       border-radius: 999px;
       background: rgba(255, 255, 255, 0.18);
     }
 
-    .skeleton span:first-child {
-      width: 82%;
-      background: rgba(255, 255, 255, 0.5);
+    .ui-card {
+      margin-top: 16px;
+      padding: 13px;
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 17px;
+      background: rgba(255, 255, 255, 0.04);
     }
 
-    .skeleton span:last-child {
-      width: 54%;
+    .ui-card.accent {
+      border-color: color-mix(in srgb, var(--accent) 22%, transparent);
+      background: color-mix(in srgb, var(--accent) 8%, transparent);
     }
 
-    .screen-button {
+    .concept-stage.blue .ui-card.accent {
+      border-color: color-mix(in srgb, var(--blue) 22%, transparent);
+      background: color-mix(in srgb, var(--blue) 8%, transparent);
+    }
+
+    .ui-row {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .ui-icon {
+      width: 34px;
+      height: 34px;
+      display: grid;
+      place-items: center;
+      flex: 0 0 auto;
+      border-radius: 10px;
+      color: var(--accent);
+      background: var(--accent-soft);
+    }
+
+    .concept-stage.blue .ui-icon {
+      color: var(--blue);
+      background: color-mix(in srgb, var(--blue) 10%, transparent);
+    }
+
+    .ui-icon svg {
+      width: 17px;
+      height: 17px;
+      fill: none;
+      stroke: currentColor;
+      stroke-width: 1.8;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+
+    .ui-lines {
+      display: grid;
+      flex: 1;
+      gap: 7px;
+    }
+
+    .ui-lines span {
+      height: 7px;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.16);
+    }
+
+    .ui-lines span:first-child {
+      width: 80%;
+      background: rgba(255, 255, 255, 0.46);
+    }
+
+    .ui-lines span:last-child {
+      width: 52%;
+    }
+
+    .ui-button {
       height: 42px;
       display: grid;
       place-items: center;
-      margin-top: 18px;
-      border-radius: 14px;
-      color: #041008;
-      background: linear-gradient(135deg, var(--accent), var(--accent-2));
-      font-size: 11px;
-      font-weight: 900;
-      letter-spacing: 0.7px;
-    }
-
-    .screen.blue .screen-button {
-      background: linear-gradient(135deg, var(--cyan), #a7ebff);
-    }
-
-    .mockup-label {
-      position: absolute;
-      padding: 10px 12px;
-      border: 1px solid var(--line);
+      margin-top: 17px;
       border-radius: 13px;
-      color: #dce5ef;
-      background: rgba(7, 11, 17, 0.78);
-      backdrop-filter: blur(10px);
-      font-size: 11px;
+      color: #041008;
+      background: var(--accent);
+      font-size: 10px;
       font-weight: 800;
+      letter-spacing: 0.08em;
     }
 
-    .label-a {
-      top: 55px;
-      left: 20px;
+    .concept-stage.blue .ui-button {
+      background: var(--blue);
     }
 
-    .label-b {
-      top: 145px;
-      right: 18px;
+    .concept-label {
+      position: absolute;
+      padding: 9px 11px;
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      color: var(--muted);
+      background: color-mix(in srgb, var(--bg-elevated) 82%, transparent);
+      backdrop-filter: blur(10px);
+      font-size: 10px;
+      font-weight: 700;
     }
 
-    .label-c {
-      bottom: 70px;
-      left: 26px;
+    .label-one {
+      top: 58px;
+      left: 22px;
     }
 
-    .public-projects {
+    .label-two {
+      top: 156px;
+      right: 20px;
+    }
+
+    .label-three {
+      bottom: 66px;
+      left: 24px;
+    }
+
+    .public-grid {
       display: grid;
       grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 16px;
+      gap: 18px;
     }
 
-    .public-project-card {
-      position: relative;
-      overflow: hidden;
-      min-height: 290px;
+    .public-card {
+      min-height: 330px;
       display: flex;
       flex-direction: column;
-      padding: 25px;
+      padding: 26px;
+      border: 1px solid var(--line);
       border-radius: var(--radius-lg);
+      background: var(--surface);
+      transition:
+        transform 0.22s ease,
+        border-color 0.22s ease;
     }
 
-    .public-project-card::before {
-      content: "";
-      position: absolute;
-      top: -80px;
-      right: -80px;
-      width: 190px;
-      height: 190px;
-      border-radius: 50%;
-      background: radial-gradient(circle, rgba(61, 220, 132, 0.13), transparent 68%);
+    .public-card:hover {
+      transform: translateY(-5px);
+      border-color: color-mix(in srgb, var(--accent) 26%, var(--line));
     }
 
-    .public-project-card h3 {
-      position: relative;
-      margin: 16px 0 8px;
-      font-size: 24px;
+    .public-card small {
+      color: var(--accent);
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
     }
 
-    .public-project-card p {
-      position: relative;
+    .public-card h3 {
+      margin: 18px 0 9px;
+      font-size: 28px;
+      letter-spacing: -0.035em;
+    }
+
+    .public-card p {
       margin: 0;
       color: var(--muted);
       font-size: 14px;
       line-height: 1.85;
     }
 
-    .project-links {
-      position: relative;
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-      margin-top: auto;
-      padding-top: 24px;
-    }
-
-    .text-link {
+    .public-link {
       display: inline-flex;
       align-items: center;
-      gap: 7px;
+      gap: 8px;
+      margin-top: auto;
+      padding-top: 22px;
       color: var(--accent);
-      font-size: 13px;
+      font-size: 12px;
       font-weight: 800;
     }
 
-    .text-link:hover {
-      color: var(--accent-2);
+    .capability-list {
+      border-top: 1px solid var(--line);
     }
 
-    .service-card {
-      min-height: 220px;
+    .capability {
+      display: grid;
+      grid-template-columns: minmax(180px, 0.45fr) minmax(0, 1fr) auto;
+      align-items: center;
+      gap: 28px;
+      padding: 26px 0;
+      border-bottom: 1px solid var(--line);
     }
 
-    .contact-card {
-      padding: 28px;
-      border-radius: var(--radius-xl);
+    .capability h3 {
+      margin: 0;
+      font-size: 20px;
+      letter-spacing: -0.025em;
     }
 
-    .contact-card h3 {
-      margin: 0 0 10px;
-      font-size: 30px;
-      line-height: 1.25;
-    }
-
-    .contact-card > p {
+    .capability p {
+      max-width: 720px;
       margin: 0;
       color: var(--muted);
+      font-size: 14px;
+      line-height: 1.8;
+    }
+
+    .capability-number {
+      color: var(--muted-2);
+      font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+      font-size: 11px;
+    }
+
+    .process-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 1px;
+      overflow: hidden;
+      border: 1px solid var(--line);
+      border-radius: var(--radius-lg);
+      background: var(--line);
+    }
+
+    .process-step {
+      min-height: 230px;
+      padding: 24px;
+      background: var(--bg-elevated);
+    }
+
+    .process-step strong {
+      display: block;
+      margin-bottom: 34px;
+      color: var(--accent);
+      font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+      font-size: 12px;
+    }
+
+    .process-step h3 {
+      margin: 0 0 10px;
+      font-size: 19px;
+    }
+
+    .process-step p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.8;
+    }
+
+    .contact-shell {
+      position: relative;
+      overflow: hidden;
+      display: grid;
+      grid-template-columns: minmax(0, 0.9fr) minmax(320px, 0.72fr);
+      gap: 46px;
+      padding: 42px;
+      border: 1px solid var(--line);
+      border-radius: 38px;
+      background:
+        radial-gradient(circle at 90% 8%, color-mix(in srgb, var(--accent) 14%, transparent), transparent 30%),
+        var(--surface);
+    }
+
+    .contact-shell h2 {
+      max-width: 650px;
+      margin: 0;
+      font-size: clamp(40px, 6vw, 72px);
+      line-height: 1;
+      letter-spacing: -0.055em;
+    }
+
+    body.fa .contact-shell h2 {
+      letter-spacing: 0;
+    }
+
+    .contact-shell p {
+      max-width: 620px;
+      margin: 18px 0 0;
+      color: var(--muted);
+      font-size: 15px;
       line-height: 1.9;
+    }
+
+    .contact-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 26px;
     }
 
     .contact-list {
       display: grid;
-      gap: 11px;
+      align-content: center;
+      gap: 10px;
     }
 
     .contact-item {
-      min-height: 66px;
+      min-height: 68px;
       display: flex;
       align-items: center;
       gap: 13px;
-      padding: 14px 16px;
+      padding: 14px;
       border: 1px solid var(--line);
-      border-radius: 17px;
-      background: rgba(255, 255, 255, 0.03);
-      transition:
-        transform 0.2s ease,
-        border-color 0.2s ease;
-    }
-
-    .contact-item:hover {
-      transform: translateY(-3px);
-      border-color: rgba(61, 220, 132, 0.22);
+      border-radius: 16px;
+      background: var(--surface);
     }
 
     .contact-icon {
@@ -1177,36 +1226,235 @@
       display: grid;
       place-items: center;
       flex: 0 0 auto;
-      border-radius: 12px;
+      border-radius: 11px;
       color: var(--accent);
-      background: rgba(61, 220, 132, 0.08);
+      background: var(--accent-soft);
+    }
+
+    .contact-icon svg {
+      width: 19px;
+      height: 19px;
+      fill: none;
+      stroke: currentColor;
+      stroke-width: 1.8;
+      stroke-linecap: round;
+      stroke-linejoin: round;
     }
 
     .contact-item strong {
       display: block;
       margin-bottom: 2px;
-      font-size: 13px;
+      font-size: 12px;
     }
 
     .contact-item span {
       color: var(--muted);
-      font-size: 13px;
+      font-size: 12px;
       word-break: break-word;
     }
 
+    .ltr-value {
+      direction: ltr;
+      unicode-bidi: isolate;
+      display: inline-block;
+      text-align: left;
+    }
+
+
+    /* Stable Persian / RTL corrections */
+    body.fa {
+      text-align: right;
+    }
+
+    body.fa .hero-title {
+      line-height: 1.24;
+    }
+
+    body.fa .section-heading h2 {
+      line-height: 1.3;
+    }
+
+    body.fa .case-study h3 {
+      line-height: 1.38;
+      font-size: clamp(28px, 3.6vw, 42px);
+    }
+
+    body.fa .contact-shell h2 {
+      line-height: 1.3;
+    }
+
+    body.fa .public-card h3,
+    body.fa .capability h3,
+    body.fa .process-step h3 {
+      line-height: 1.65;
+    }
+
+    body.fa .hero-description,
+    body.fa .profile-copy,
+    body.fa .section-heading,
+    body.fa .case-study,
+    body.fa .public-card,
+    body.fa .capability,
+    body.fa .process-step,
+    body.fa .contact-shell,
+    body.fa .contact-item {
+      text-align: right;
+    }
+
+    body.fa .hero-description,
+    body.fa .profile-copy p,
+    body.fa .section-heading p,
+    body.fa .case-summary,
+    body.fa .case-detail span,
+    body.fa .case-feature,
+    body.fa .confidential,
+    body.fa .public-card p,
+    body.fa .capability p,
+    body.fa .process-step p,
+    body.fa .contact-shell p,
+    body.fa .proof-item span {
+      direction: rtl;
+      unicode-bidi: plaintext;
+      text-align: right;
+    }
+
+    body.fa .section-kicker {
+      direction: rtl;
+      justify-content: flex-start;
+      letter-spacing: 0;
+      text-transform: none;
+    }
+
+    body.fa .section-kicker::before {
+      order: 2;
+    }
+
+    body.fa .section-heading {
+      direction: rtl;
+    }
+
+    body.fa .case-study {
+      direction: rtl;
+      grid-template-columns: minmax(0, 0.9fr) minmax(360px, 0.72fr);
+    }
+
+    body.fa .case-study > * {
+      min-width: 0;
+    }
+
+    body.fa .case-index,
+    body.fa .case-badge,
+    body.fa .case-details,
+    body.fa .case-features,
+    body.fa .stack {
+      direction: rtl;
+    }
+
+    body.fa .case-detail {
+      text-align: right;
+    }
+
+    body.fa .case-feature {
+      flex-direction: row;
+    }
+
+    body.fa .public-grid {
+      direction: rtl;
+    }
+
+    body.fa .public-card {
+      direction: rtl;
+    }
+
+    body.fa .public-link {
+      direction: rtl;
+      justify-content: flex-start;
+    }
+
+    body.fa .capability {
+      direction: rtl;
+      grid-template-columns: minmax(220px, 0.45fr) minmax(0, 1fr) auto;
+      grid-template-areas: "title description number";
+    }
+
+    body.fa .capability h3 {
+      grid-area: title;
+      text-align: right;
+    }
+
+    body.fa .capability p {
+      grid-area: description;
+      text-align: right;
+    }
+
+    body.fa .capability-number {
+      grid-area: number;
+      direction: ltr;
+      text-align: left;
+    }
+
+    body.fa .process-grid,
+    body.fa .contact-shell,
+    body.fa .contact-list,
+    body.fa .contact-item {
+      direction: rtl;
+    }
+
+    body.fa .ltr-value {
+      direction: ltr;
+      unicode-bidi: isolate;
+      text-align: left;
+    }
+
+    body.fa .hero-actions .button.primary svg {
+      transform: scaleX(-1);
+    }
+
+    @media (max-width: 1040px) {
+      body.fa .case-study {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 760px) {
+      body.fa .capability {
+        grid-template-columns: 1fr;
+        grid-template-areas:
+          "number"
+          "title"
+          "description";
+      }
+
+      body.fa .capability-number {
+        text-align: right;
+      }
+
+      body.fa .hero-title {
+        line-height: 1.3;
+      }
+
+      body.fa .section-heading h2 {
+        line-height: 1.38;
+      }
+
+      body.fa .case-study h3 {
+        line-height: 1.42;
+      }
+    }
+
     footer {
-      padding: 30px 0 46px;
-      color: var(--muted);
+      padding: 28px 0 44px;
+      color: var(--muted-2);
+      font-size: 12px;
       text-align: center;
-      font-size: 13px;
     }
 
     .reveal {
       opacity: 0;
-      transform: translateY(22px);
+      transform: translateY(20px);
       transition:
-        opacity 0.7s ease,
-        transform 0.7s ease;
+        opacity 0.65s ease,
+        transform 0.65s ease;
     }
 
     .reveal.visible {
@@ -1222,23 +1470,20 @@
       transition-delay: 0.16s;
     }
 
-    .delay-3 {
-      transition-delay: 0.24s;
-    }
-
-    @media (max-width: 1020px) {
+    @media (max-width: 1040px) {
       .hero-grid,
-      .project-grid {
+      .case-study,
+      .contact-shell {
         grid-template-columns: 1fr;
       }
 
-      .hero-card {
-        max-width: 680px;
+      .profile-card {
+        max-width: 700px;
       }
 
-      .grid-3,
-      .services-grid {
-        grid-template-columns: 1fr;
+      .proof-strip,
+      .process-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
       }
 
       .navlinks {
@@ -1251,93 +1496,82 @@
     }
 
     @media (max-width: 760px) {
+      .section {
+        padding: 62px 0;
+      }
+
       .hero {
-        padding-top: 58px;
+        padding-top: 60px;
       }
 
-      .hero h1 {
-        font-size: 46px;
+      .hero-title {
+        font-size: 52px;
       }
 
-      .hero p {
+      .hero-description {
         font-size: 16px;
       }
 
-      .section {
-        padding: 52px 0;
+      .section-heading {
+        grid-template-columns: 1fr;
+        gap: 14px;
       }
 
-      .section-head {
-        display: block;
-      }
-
-      .section-head p {
-        margin-top: 12px;
-      }
-
-      .grid-2,
-      .contact-grid,
-      .public-projects {
+      .public-grid,
+      .case-details,
+      .proof-strip,
+      .process-grid {
         grid-template-columns: 1fr;
       }
 
-      .project,
-      .contact-card {
+      .capability {
+        grid-template-columns: 1fr;
+        gap: 10px;
+      }
+
+      .capability-number {
+        grid-row: 1;
+      }
+
+      .case-study,
+      .contact-shell {
         padding: 21px;
       }
 
-      .mockup-stage {
-        min-height: 430px;
+      .profile-frame {
+        min-height: 440px;
       }
 
-      .floating-chip {
-        font-size: 10px;
+      .contact-shell h2 {
+        font-size: 45px;
       }
 
-      .brand-role,
-      .desktop-cv {
-        display: none;
-      }
-
-      .cta .btn {
+      .hero-actions .button,
+      .contact-actions .button {
         width: 100%;
+      }
+
+      .nav-cta,
+      .brand-role {
+        display: none;
       }
     }
 
-    @media (max-width: 470px) {
-      .hero h1 {
-        font-size: 39px;
+    @media (max-width: 460px) {
+      .hero-title {
+        font-size: 43px;
       }
 
-      .identity-panel {
-        min-height: 410px;
+      .profile-frame {
+        min-height: 400px;
       }
 
-      .identity-ring {
-        width: 190px;
-        height: 190px;
+      .concept-stage {
+        min-height: 440px;
       }
 
-      .initials {
-        width: 120px;
-        height: 120px;
-        font-size: 42px;
-      }
-
-      .chip-one {
-        left: 12px;
-      }
-
-      .chip-two {
-        right: 10px;
-      }
-
-      .chip-three {
-        left: 12px;
-      }
-
-      .chip-four {
-        right: 10px;
+      .concept-label {
+        font-size: 9px;
       }
     }
 
@@ -1364,27 +1598,20 @@
 
 <body>
   <a class="skip-link" href="#main-content">Skip to content</a>
-
   <div id="progress" aria-hidden="true"></div>
-
-  <div class="ambient" aria-hidden="true">
-    <div class="orb one"></div>
-    <div class="orb two"></div>
-    <div class="orb three"></div>
-  </div>
+  <div class="noise" aria-hidden="true"></div>
 
   <div class="mobile-menu" id="mobileMenu" aria-hidden="true">
     <div class="mobile-panel">
       <div class="mobile-head">
         <strong data-i18n="menu">Menu</strong>
-        <button class="nav-btn" id="closeMenuBtn" aria-label="Close menu">✕</button>
+        <button class="icon-btn" id="closeMenuBtn" aria-label="Close menu">✕</button>
       </div>
 
       <nav class="mobile-links" aria-label="Mobile navigation">
-        <a href="#about" data-i18n="navAbout">About</a>
-        <a href="#expertise" data-i18n="navExpertise">Expertise</a>
-        <a href="#work" data-i18n="navWork">Selected Work</a>
-        <a href="#services" data-i18n="navServices">Services</a>
+        <a href="#work" data-i18n="navWork">Work</a>
+        <a href="#capabilities" data-i18n="navCapabilities">Capabilities</a>
+        <a href="#process" data-i18n="navProcess">Process</a>
         <a href="#contact" data-i18n="navContact">Contact</a>
       </nav>
     </div>
@@ -1393,7 +1620,7 @@
   <header class="topbar">
     <div class="container nav">
       <a class="brand" href="#top" aria-label="Erfan Moghaddam home">
-        <div class="brand-mark">EM</div>
+        <div class="brand-monogram">EM</div>
         <div>
           <div class="brand-name">Erfan Moghaddam</div>
           <div class="brand-role">Android Developer</div>
@@ -1401,26 +1628,29 @@
       </a>
 
       <nav class="navlinks" aria-label="Primary navigation">
-        <a href="#about" data-i18n="navAbout">About</a>
-        <a href="#expertise" data-i18n="navExpertise">Expertise</a>
-        <a href="#work" data-i18n="navWork">Selected Work</a>
-        <a href="#services" data-i18n="navServices">Services</a>
-        <a href="#contact" data-i18n="navContact">Contact</a>
+        <a href="#work" data-section="work" data-i18n="navWork">Work</a>
+        <a href="#capabilities" data-section="capabilities" data-i18n="navCapabilities">Capabilities</a>
+        <a href="#process" data-section="process" data-i18n="navProcess">Process</a>
+        <a href="#contact" data-section="contact" data-i18n="navContact">Contact</a>
       </nav>
 
       <div class="nav-actions">
-        <a
-          class="nav-btn desktop-cv"
-          href="Erfan_Moghaddam_Android_Developer_CV.pdf"
-          download
-        >
-          <span data-i18n="downloadCv">Download CV</span>
+        <a class="nav-cta" href="mailto:erfanmusicmoghaddam@gmail.com">
+          <span data-i18n="hireMe">Discuss a Project</span>
         </a>
 
-        <button class="nav-btn" id="langBtn" aria-label="Switch language">FA</button>
+        <button class="icon-btn" id="themeBtn" aria-label="Toggle color theme">
+          <svg id="themeIcon" viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M20 15.5A8 8 0 0 1 8.5 4 8.5 8.5 0 1 0 20 15.5Z"></path>
+          </svg>
+        </button>
 
-        <button class="nav-btn menu-btn" id="menuBtn" aria-label="Open menu">
-          ☰
+        <button class="icon-btn" id="langBtn" aria-label="Switch language">FA</button>
+
+        <button class="icon-btn menu-btn" id="menuBtn" aria-label="Open menu">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M4 7h16M4 12h16M4 17h16"></path>
+          </svg>
         </button>
       </div>
     </div>
@@ -1430,34 +1660,36 @@
     <section class="hero container" id="top">
       <div class="hero-grid">
         <div class="reveal">
-          <div class="eyebrow">
-            <span class="status-dot"></span>
+          <div class="availability">
+            <span class="availability-dot"></span>
             <span data-i18n="availability">Available for remote freelance and contract work</span>
           </div>
 
-          <h1 data-i18n-html="heroTitle">
-            Building reliable
-            <span class="hero-highlight">Android products</span>
+          <h1 class="hero-title" data-i18n-html="heroTitle">
+            I build reliable
+            <span class="accent">Android products</span>
             for real-world use.
           </h1>
 
-          <p data-i18n="heroText">
+          <p class="hero-description" data-i18n="heroDescription">
             Android Developer specializing in Kotlin, Jetpack Compose, Clean Architecture,
             authentication, and resilient REST API integration.
           </p>
 
-          <div class="cta">
-            <a class="btn primary" href="#work">
+          <div class="hero-actions">
+            <a class="button primary" href="#work">
               <span data-i18n="viewWork">View Selected Work</span>
-              <span aria-hidden="true">→</span>
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M5 12h14m-5-5 5 5-5 5"></path>
+              </svg>
             </a>
 
-            <a class="btn secondary" href="mailto:erfanmusicmoghaddam@gmail.com">
-              <span data-i18n="startProject">Discuss a Project</span>
+            <a class="button" href="mailto:erfanmusicmoghaddam@gmail.com">
+              <span data-i18n="discussProject">Discuss a Project</span>
             </a>
 
             <a
-              class="btn secondary"
+              class="button"
               href="Erfan_Moghaddam_Android_Developer_CV.pdf"
               download
             >
@@ -1465,483 +1697,486 @@
             </a>
           </div>
 
-          <div class="hero-note">
-            <span data-i18n="heroNote1">Kotlin & Jetpack Compose</span>
-            <span data-i18n="heroNote2">Clean Architecture & MVVM</span>
-            <span data-i18n="heroNote3">REST APIs & Authentication</span>
+          <div class="hero-meta">
+            <span>Kotlin & Jetpack Compose</span>
+            <span>Clean Architecture & MVVM</span>
+            <span>REST APIs & Authentication</span>
           </div>
         </div>
 
-        <div class="hero-card glass reveal delay-1">
-          <div class="identity-panel">
-            <div class="identity-visual">
-              <span class="floating-chip chip-one">Kotlin</span>
-              <span class="floating-chip chip-two">Compose</span>
-              <span class="floating-chip chip-three">MVVM</span>
-              <span class="floating-chip chip-four">REST API</span>
-
-              <div class="identity-ring" aria-hidden="true">
-                <div class="initials">EM</div>
-              </div>
+        <div class="profile-card reveal delay-1">
+          <div class="profile-frame">
+            <div class="profile-topline">
+              <span class="profile-code">android.dev</span>
+              <span class="profile-code">remote.ready</span>
             </div>
 
-            <div class="identity-copy">
-              <strong>Erfan Moghaddam</strong>
-              <p data-i18n="identityText">
-                Android Developer focused on maintainable architecture, reliable application
-                flows, and production-oriented mobile experiences.
+            <div class="profile-copy">
+              <h2>Erfan Moghaddam</h2>
+              <p data-i18n="profileText">
+                Building maintainable Android applications with reliable product flows and
+                clear technical decisions.
               </p>
             </div>
           </div>
         </div>
       </div>
-    </section>
 
-    <section class="section container" id="about">
-      <div class="section-head reveal">
-        <div>
-          <div class="section-label">Profile</div>
-          <h2 data-i18n="aboutTitle">About Me</h2>
+      <div class="proof-strip reveal delay-2">
+        <div class="proof-item">
+          <strong>2</strong>
+          <span data-i18n="proofPrivate">Anonymized private Android products</span>
         </div>
 
-        <p data-i18n="aboutDescription">
-          I turn product requirements and interface designs into maintainable Android
-          applications. My work extends beyond screens to networking, session management,
-          error handling, localization, and predictable application state.
-        </p>
-      </div>
-
-      <div class="grid-3">
-        <article class="card glass reveal delay-1">
-          <div class="icon-box">◫</div>
-          <h3 data-i18n="aboutCard1Title">Product-Oriented Development</h3>
-          <p data-i18n="aboutCard1Text">
-            Building mobile applications around real product requirements, user journeys,
-            and operational constraints.
-          </p>
-        </article>
-
-        <article class="card glass reveal delay-2">
-          <div class="icon-box">⌁</div>
-          <h3 data-i18n="aboutCard2Title">Reliable App Flows</h3>
-          <p data-i18n="aboutCard2Text">
-            Designing authentication, session, payment, and API communication flows that
-            remain predictable under failure conditions.
-          </p>
-        </article>
-
-        <article class="card glass reveal delay-3">
-          <div class="icon-box">◇</div>
-          <h3 data-i18n="aboutCard3Title">Maintainable Architecture</h3>
-          <p data-i18n="aboutCard3Text">
-            Structuring code with separation of concerns, reusable components, and
-            architecture that supports future development.
-          </p>
-        </article>
-      </div>
-    </section>
-
-    <section class="section container" id="expertise">
-      <div class="section-head reveal">
-        <div>
-          <div class="section-label">Core Expertise</div>
-          <h2 data-i18n="expertiseTitle">Technical Capabilities</h2>
+        <div class="proof-item">
+          <strong>Kotlin</strong>
+          <span data-i18n="proofPrimary">Primary Android development language</span>
         </div>
 
-        <p data-i18n="expertiseDescription">
-          A practical Android stack for modern interfaces, stable networking, maintainable
-          architecture, and production-ready application workflows.
-        </p>
-      </div>
+        <div class="proof-item">
+          <strong>Compose</strong>
+          <span data-i18n="proofUi">Modern declarative mobile interfaces</span>
+        </div>
 
-      <div class="grid-2">
-        <article class="card glass reveal delay-1">
-          <h3 data-i18n="androidStackTitle">Android & UI</h3>
-
-          <div class="tags">
-            <span class="tag">Kotlin</span>
-            <span class="tag">Jetpack Compose</span>
-            <span class="tag">Material Design</span>
-            <span class="tag">Android Studio</span>
-            <span class="tag">Responsive UI</span>
-            <span class="tag">Localization</span>
-          </div>
-        </article>
-
-        <article class="card glass reveal delay-2">
-          <h3 data-i18n="architectureStackTitle">Architecture & Integration</h3>
-
-          <div class="tags">
-            <span class="tag">MVVM</span>
-            <span class="tag">Clean Architecture</span>
-            <span class="tag">Repository Pattern</span>
-            <span class="tag">REST API</span>
-            <span class="tag">Ktor / Retrofit</span>
-            <span class="tag">Hilt / Koin</span>
-            <span class="tag">Authentication</span>
-            <span class="tag">Token Refresh</span>
-          </div>
-        </article>
+        <div class="proof-item">
+          <strong>Remote</strong>
+          <span data-i18n="proofRemote">Available for freelance and contract work</span>
+        </div>
       </div>
     </section>
 
     <section class="section container" id="work">
-      <div class="section-head reveal">
-        <div>
-          <div class="section-label">Selected Work</div>
-          <h2 data-i18n="workTitle">Private Product Experience</h2>
-        </div>
+      <div class="section-kicker" data-i18n="kickerWork">Selected Work</div>
 
+      <div class="section-heading reveal">
+        <h2 data-i18n="workTitle">Work built around real product constraints.</h2>
         <p data-i18n="workDescription">
-          These case studies are intentionally anonymized. They describe the technical nature
-          of the work without exposing client names, proprietary interfaces, internal
-          roadmaps, or confidential assets.
+          Private product experience is presented as anonymized case studies. Client names,
+          proprietary screens, internal roadmaps, and confidential assets are intentionally
+          excluded.
         </p>
       </div>
 
-      <article class="project glass reveal">
-        <div class="project-grid">
-          <div class="project-copy">
-            <div class="project-badge">
-              <span>●</span>
-              <span data-i18n="privateOperationalBadge">Private operational product</span>
+      <div class="work-list">
+        <article class="case-study reveal">
+          <div>
+            <div class="case-index">01 / PRIVATE</div>
+
+            <div class="case-badge" data-i18n="operationalBadge">
+              Operational Android product
             </div>
 
             <h3 data-i18n="operationalTitle">
-              Operational Smart-Mobility Android Platform
+              Smart-mobility platform for operator workflows
             </h3>
 
-            <p data-i18n="operationalDescription">
-              An Android application supporting field and operator workflows in a
+            <p class="case-summary" data-i18n="operationalSummary">
+              An Android application supporting frequent operational workflows in a
               vehicle-related service environment. The product combines camera-assisted
-              identification, server-backed processing, payment operations, and structured
-              application states.
+              identification, server-backed processing, payments, and structured application
+              states.
             </p>
 
-            <div class="feature-list">
-              <div class="feature-item" data-i18n="operationalFeature1">
-                Camera-assisted vehicle identification workflow
+            <div class="case-details">
+              <div class="case-detail">
+                <strong data-i18n="roleLabel">Role</strong>
+                <span data-i18n="operationalRole">Android development and integration</span>
               </div>
-              <div class="feature-item" data-i18n="operationalFeature2">
-                Secure image and data exchange with backend services
+
+              <div class="case-detail">
+                <strong data-i18n="focusLabel">Focus</strong>
+                <span data-i18n="operationalFocus">Reliability and operator speed</span>
               </div>
-              <div class="feature-item" data-i18n="operationalFeature3">
-                Payment and operational status handling
+
+              <div class="case-detail">
+                <strong data-i18n="environmentLabel">Environment</strong>
+                <span data-i18n="operationalEnvironment">Private production system</span>
               </div>
-              <div class="feature-item" data-i18n="operationalFeature4">
+            </div>
+
+            <div class="case-features">
+              <div class="case-feature" data-i18n="operationalFeature1">
+                Camera-assisted identification and image transfer
+              </div>
+              <div class="case-feature" data-i18n="operationalFeature2">
                 Authentication, session management, and request retry logic
               </div>
-              <div class="feature-item" data-i18n="operationalFeature5">
-                Fast Compose interface designed for frequent operational use
+              <div class="case-feature" data-i18n="operationalFeature3">
+                Payment and operational-status workflows
+              </div>
+              <div class="case-feature" data-i18n="operationalFeature4">
+                Fast, reusable Jetpack Compose interface
               </div>
             </div>
 
-            <div class="tags">
-              <span class="tag">Kotlin</span>
-              <span class="tag">Jetpack Compose</span>
-              <span class="tag">REST API</span>
-              <span class="tag">Camera Flow</span>
-              <span class="tag">Session Management</span>
+            <div class="stack">
+              <span>Kotlin</span>
+              <span>Jetpack Compose</span>
+              <span>REST API</span>
+              <span>Camera Flow</span>
+              <span>Session Management</span>
             </div>
 
-            <div class="confidential-note" data-i18n="conceptVisualNote">
-              The visual is an original conceptual mockup created for this portfolio. It does
-              not reproduce any client screen, logo, or proprietary design.
-            </div>
+            <p class="confidential" data-i18n="confidentialNote">
+              Conceptual visual only. No client screen, logo, product name, or proprietary
+              design is reproduced.
+            </p>
           </div>
 
-          <div class="mockup-stage" aria-label="Conceptual operational application mockup">
-            <span class="mockup-label label-a" data-i18n="mockupLabel1">Secure session</span>
-            <span class="mockup-label label-b" data-i18n="mockupLabel2">Vehicle workflow</span>
-            <span class="mockup-label label-c" data-i18n="mockupLabel3">API status</span>
+          <div class="concept-stage" aria-label="Conceptual operational Android interface">
+            <span class="concept-label label-one" data-i18n="labelSecure">Secure session</span>
+            <span class="concept-label label-two" data-i18n="labelVehicle">Vehicle workflow</span>
+            <span class="concept-label label-three" data-i18n="labelStatus">API status</span>
 
-            <div class="phone" aria-hidden="true">
-              <div class="screen">
-                <div class="screen-content">
-                  <div class="screen-title"></div>
-                  <div class="screen-subtitle"></div>
+            <div class="device" aria-hidden="true">
+              <div class="device-screen">
+                <div class="ui-title"></div>
+                <div class="ui-subtitle"></div>
 
-                  <div class="screen-card accent">
-                    <div class="screen-row">
-                      <div class="mini-icon">⌾</div>
-                      <div class="skeleton">
-                        <span></span>
-                        <span></span>
-                      </div>
+                <div class="ui-card accent">
+                  <div class="ui-row">
+                    <div class="ui-icon">
+                      <svg viewBox="0 0 24 24">
+                        <path d="M4 7h4l2-2h4l2 2h4v12H4Z"></path>
+                        <circle cx="12" cy="13" r="3"></circle>
+                      </svg>
                     </div>
+                    <div class="ui-lines"><span></span><span></span></div>
                   </div>
-
-                  <div class="screen-card">
-                    <div class="screen-row">
-                      <div class="mini-icon">↗</div>
-                      <div class="skeleton">
-                        <span></span>
-                        <span></span>
-                      </div>
-                    </div>
-                  </div>
-
-                  <div class="screen-card">
-                    <div class="screen-row">
-                      <div class="mini-icon">✓</div>
-                      <div class="skeleton">
-                        <span></span>
-                        <span></span>
-                      </div>
-                    </div>
-                  </div>
-
-                  <div class="screen-button">CONTINUE WORKFLOW</div>
                 </div>
+
+                <div class="ui-card">
+                  <div class="ui-row">
+                    <div class="ui-icon">
+                      <svg viewBox="0 0 24 24">
+                        <path d="M4 6h16v12H4Z"></path>
+                        <path d="m4 8 8 6 8-6"></path>
+                      </svg>
+                    </div>
+                    <div class="ui-lines"><span></span><span></span></div>
+                  </div>
+                </div>
+
+                <div class="ui-card">
+                  <div class="ui-row">
+                    <div class="ui-icon">
+                      <svg viewBox="0 0 24 24">
+                        <path d="m5 12 4 4L19 6"></path>
+                      </svg>
+                    </div>
+                    <div class="ui-lines"><span></span><span></span></div>
+                  </div>
+                </div>
+
+                <div class="ui-button">CONTINUE WORKFLOW</div>
               </div>
             </div>
           </div>
-        </div>
-      </article>
+        </article>
 
-      <article class="project glass reveal delay-1">
-        <div class="project-grid">
-          <div class="project-copy">
-            <div class="project-badge">
-              <span>●</span>
-              <span data-i18n="privateConsumerBadge">Private consumer product</span>
+        <article class="case-study reveal">
+          <div>
+            <div class="case-index">02 / PRIVATE</div>
+
+            <div class="case-badge" data-i18n="consumerBadge">
+              Consumer Android product
             </div>
 
             <h3 data-i18n="consumerTitle">
-              Consumer Smart-Parking Android Application
+              Smart-parking application for end users
             </h3>
 
-            <p data-i18n="consumerDescription">
+            <p class="case-summary" data-i18n="consumerSummary">
               A consumer-facing Android product designed around account access, wallet and
               payment flows, biometric authentication, vehicle-related security, and a
               low-friction parking experience.
             </p>
 
-            <div class="feature-list">
-              <div class="feature-item" data-i18n="consumerFeature1">
+            <div class="case-details">
+              <div class="case-detail">
+                <strong data-i18n="roleLabel">Role</strong>
+                <span data-i18n="consumerRole">Android product development</span>
+              </div>
+
+              <div class="case-detail">
+                <strong data-i18n="focusLabel">Focus</strong>
+                <span data-i18n="consumerFocus">Secure and simple user journeys</span>
+              </div>
+
+              <div class="case-detail">
+                <strong data-i18n="environmentLabel">Environment</strong>
+                <span data-i18n="consumerEnvironment">Private consumer product</span>
+              </div>
+            </div>
+
+            <div class="case-features">
+              <div class="case-feature" data-i18n="consumerFeature1">
                 Wallet and balance-based payment experience
               </div>
-              <div class="feature-item" data-i18n="consumerFeature2">
+              <div class="case-feature" data-i18n="consumerFeature2">
                 Biometric authentication for selected sensitive actions
               </div>
-              <div class="feature-item" data-i18n="consumerFeature3">
-                Secure account, vehicle, and session workflows
+              <div class="case-feature" data-i18n="consumerFeature3">
+                Localized and reusable Compose components
               </div>
-              <div class="feature-item" data-i18n="consumerFeature4">
-                Localized and reusable Jetpack Compose components
-              </div>
-              <div class="feature-item" data-i18n="consumerFeature5">
-                Error handling and predictable UI state across network operations
+              <div class="case-feature" data-i18n="consumerFeature4">
+                Predictable UI state across network operations
               </div>
             </div>
 
-            <div class="tags">
-              <span class="tag">Kotlin</span>
-              <span class="tag">Jetpack Compose</span>
-              <span class="tag">Wallet Flow</span>
-              <span class="tag">Biometric UX</span>
-              <span class="tag">Localization</span>
+            <div class="stack">
+              <span>Kotlin</span>
+              <span>Jetpack Compose</span>
+              <span>Wallet Flow</span>
+              <span>Biometric UX</span>
+              <span>Localization</span>
             </div>
 
-            <div class="confidential-note" data-i18n="conceptVisualNote">
-              The visual is an original conceptual mockup created for this portfolio. It does
-              not reproduce any client screen, logo, or proprietary design.
-            </div>
+            <p class="confidential" data-i18n="confidentialNote">
+              Conceptual visual only. No client screen, logo, product name, or proprietary
+              design is reproduced.
+            </p>
           </div>
 
-          <div class="mockup-stage blue" aria-label="Conceptual consumer application mockup">
-            <span class="mockup-label label-a" data-i18n="mockupLabel4">Wallet flow</span>
-            <span class="mockup-label label-b" data-i18n="mockupLabel5">Biometric access</span>
-            <span class="mockup-label label-c" data-i18n="mockupLabel6">Localized UI</span>
+          <div class="concept-stage blue" aria-label="Conceptual consumer Android interface">
+            <span class="concept-label label-one" data-i18n="labelWallet">Wallet flow</span>
+            <span class="concept-label label-two" data-i18n="labelBiometric">Biometric access</span>
+            <span class="concept-label label-three" data-i18n="labelLocalized">Localized UI</span>
 
-            <div class="phone" aria-hidden="true">
-              <div class="screen blue">
-                <div class="screen-content">
-                  <div class="screen-title"></div>
-                  <div class="screen-subtitle"></div>
+            <div class="device" aria-hidden="true">
+              <div class="device-screen">
+                <div class="ui-title"></div>
+                <div class="ui-subtitle"></div>
 
-                  <div class="screen-card accent">
-                    <div class="screen-row">
-                      <div class="mini-icon">◈</div>
-                      <div class="skeleton">
-                        <span></span>
-                        <span></span>
-                      </div>
+                <div class="ui-card accent">
+                  <div class="ui-row">
+                    <div class="ui-icon">
+                      <svg viewBox="0 0 24 24">
+                        <path d="M4 7a2 2 0 0 1 2-2h11a2 2 0 0 1 2 2v2H6a2 2 0 0 0 0 4h13v4a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2Z"></path>
+                        <path d="M18 9h2v4h-2a2 2 0 0 1 0-4Z"></path>
+                      </svg>
                     </div>
+                    <div class="ui-lines"><span></span><span></span></div>
                   </div>
-
-                  <div class="screen-card">
-                    <div class="screen-row">
-                      <div class="mini-icon">◎</div>
-                      <div class="skeleton">
-                        <span></span>
-                        <span></span>
-                      </div>
-                    </div>
-                  </div>
-
-                  <div class="screen-card">
-                    <div class="screen-row">
-                      <div class="mini-icon">▣</div>
-                      <div class="skeleton">
-                        <span></span>
-                        <span></span>
-                      </div>
-                    </div>
-                  </div>
-
-                  <div class="screen-button">CONFIRM SECURE ACTION</div>
                 </div>
+
+                <div class="ui-card">
+                  <div class="ui-row">
+                    <div class="ui-icon">
+                      <svg viewBox="0 0 24 24">
+                        <path d="M12 3a6 6 0 0 1 6 6M6 9a6 6 0 0 1 6-6M18 9v2M6 9v4M9 8v8M12 6v11M15 8v7"></path>
+                      </svg>
+                    </div>
+                    <div class="ui-lines"><span></span><span></span></div>
+                  </div>
+                </div>
+
+                <div class="ui-card">
+                  <div class="ui-row">
+                    <div class="ui-icon">
+                      <svg viewBox="0 0 24 24">
+                        <path d="M5 5h14v14H5Z"></path>
+                        <path d="M8 9h8M8 13h5"></path>
+                      </svg>
+                    </div>
+                    <div class="ui-lines"><span></span><span></span></div>
+                  </div>
+                </div>
+
+                <div class="ui-button">CONFIRM SECURE ACTION</div>
               </div>
             </div>
           </div>
-        </div>
-      </article>
+        </article>
+      </div>
     </section>
 
     <section class="section container" id="public-work">
-      <div class="section-head reveal">
-        <div>
-          <div class="section-label">Public Work</div>
-          <h2 data-i18n="publicWorkTitle">Publicly Reviewable Projects</h2>
-        </div>
+      <div class="section-kicker" data-i18n="kickerPublic">Public Work</div>
 
-        <p data-i18n="publicWorkDescription">
-          Public projects that demonstrate backend experimentation, technical communication,
-          and portfolio presentation.
+      <div class="section-heading reveal">
+        <h2 data-i18n="publicTitle">Projects you can review directly.</h2>
+        <p data-i18n="publicDescription">
+          Public repositories demonstrating API experimentation, technical presentation, and
+          project communication.
         </p>
       </div>
 
-      <div class="public-projects">
-        <article class="public-project-card glass reveal delay-1">
-          <div class="project-badge">Python / API</div>
+      <div class="public-grid">
+        <article class="public-card reveal">
+          <small>Python / API</small>
           <h3>Crypto Signal API</h3>
-          <p data-i18n="cryptoDescription">
-            A Python-based API developed for cryptocurrency market analysis and
-            signal-generation experiments, with modular service responsibilities and
-            data-processing flows.
+          <p data-i18n="cryptoText">
+            A Python-based API for cryptocurrency market-analysis and signal-generation
+            experiments, with modular service responsibilities and data-processing flows.
           </p>
 
-          <div class="tags">
-            <span class="tag">Python</span>
-            <span class="tag">REST API</span>
-            <span class="tag">Market Data</span>
+          <div class="stack">
+            <span>Python</span>
+            <span>REST API</span>
+            <span>Market Data</span>
           </div>
 
-          <div class="project-links">
-            <a
-              class="text-link"
-              href="https://github.com/erfan-moghaddam/crypto-signal-api"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <span data-i18n="viewRepository">View Repository</span>
-              <span aria-hidden="true">↗</span>
-            </a>
-          </div>
+          <a
+            class="public-link"
+            href="https://github.com/erfan-moghaddam/crypto-signal-api"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <span data-i18n="viewRepository">View Repository</span>
+            
+          </a>
         </article>
 
-        <article class="public-project-card glass reveal delay-2">
-          <div class="project-badge">Web / Portfolio</div>
+        <article class="public-card reveal delay-1">
+          <small>Web / Portfolio</small>
           <h3>Developer Portfolio</h3>
-          <p data-i18n="portfolioDescription">
+          <p data-i18n="portfolioText">
             A responsive bilingual portfolio created to present technical experience,
-            selected work, professional services, and direct contact options.
+            anonymized case studies, professional services, and direct contact options.
           </p>
 
-          <div class="tags">
-            <span class="tag">HTML</span>
-            <span class="tag">CSS</span>
-            <span class="tag">JavaScript</span>
-            <span class="tag">Responsive UI</span>
+          <div class="stack">
+            <span>HTML</span>
+            <span>CSS</span>
+            <span>JavaScript</span>
+            <span>Responsive UI</span>
           </div>
 
-          <div class="project-links">
-            <a
-              class="text-link"
-              href="https://github.com/erfan-moghaddam/erfan-moghaddam.github.io"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <span data-i18n="viewSource">View Source</span>
-              <span aria-hidden="true">↗</span>
-            </a>
-          </div>
+          <a
+            class="public-link"
+            href="https://github.com/erfan-moghaddam/erfan-moghaddam.github.io"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <span data-i18n="viewSource">View Source</span>
+            
+          </a>
         </article>
       </div>
     </section>
 
-    <section class="section container" id="services">
-      <div class="section-head reveal">
-        <div>
-          <div class="section-label">Services</div>
-          <h2 data-i18n="servicesTitle">How I Can Help</h2>
-        </div>
+    <section class="section container" id="capabilities">
+      <div class="section-kicker" data-i18n="kickerCapabilities">Capabilities</div>
 
-        <p data-i18n="servicesDescription">
-          Focused Android development services for new products and existing mobile
-          applications.
+      <div class="section-heading reveal">
+        <h2 data-i18n="capabilitiesTitle">Focused Android development services.</h2>
+        <p data-i18n="capabilitiesDescription">
+          Support for new products, existing applications, and technical flows that require
+          maintainable architecture and reliable integration.
         </p>
       </div>
 
-      <div class="services-grid">
-        <article class="card service-card glass reveal delay-1">
-          <div class="icon-box">◫</div>
-          <h3 data-i18n="service1Title">Android App Development</h3>
-          <p data-i18n="service1Text">
-            Building Android applications and features with Kotlin, Jetpack Compose, and
-            maintainable architecture.
+      <div class="capability-list reveal">
+        <article class="capability">
+          <span class="capability-number">01</span>
+          <h3 data-i18n="capability1Title">Android Product Development</h3>
+          <p data-i18n="capability1Text">
+            Kotlin and Jetpack Compose implementation for new applications, features, and
+            responsive mobile interfaces.
           </p>
         </article>
 
-        <article class="card service-card glass reveal delay-2">
-          <div class="icon-box">⇄</div>
-          <h3 data-i18n="service2Title">API & Authentication Integration</h3>
-          <p data-i18n="service2Text">
-            Integrating REST APIs, access tokens, refresh tokens, sessions, and structured
-            network error handling.
+        <article class="capability">
+          <span class="capability-number">02</span>
+          <h3 data-i18n="capability2Title">API & Authentication Integration</h3>
+          <p data-i18n="capability2Text">
+            REST APIs, access tokens, refresh-token workflows, session management, retries,
+            and structured network-error handling.
           </p>
         </article>
 
-        <article class="card service-card glass reveal delay-3">
-          <div class="icon-box">⌁</div>
-          <h3 data-i18n="service3Title">Refactoring & App Improvement</h3>
-          <p data-i18n="service3Text">
-            Improving existing codebases, fixing application flows, reducing coupling, and
-            creating reusable Compose components.
+        <article class="capability">
+          <span class="capability-number">03</span>
+          <h3 data-i18n="capability3Title">Architecture & Refactoring</h3>
+          <p data-i18n="capability3Text">
+            Improving separation of concerns, reducing coupling, restructuring application
+            flows, and creating reusable Compose components.
+          </p>
+        </article>
+
+        <article class="capability">
+          <span class="capability-number">04</span>
+          <h3 data-i18n="capability4Title">Existing App Improvement</h3>
+          <p data-i18n="capability4Text">
+            Bug investigation, feature implementation, error-state improvements, and
+            maintenance of existing Android codebases.
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section container" id="process">
+      <div class="section-kicker" data-i18n="kickerProcess">Process</div>
+
+      <div class="section-heading reveal">
+        <h2 data-i18n="processTitle">A clear path from requirement to release.</h2>
+        <p data-i18n="processDescription">
+          A practical workflow that keeps product goals, technical risk, and maintainability
+          visible throughout implementation.
+        </p>
+      </div>
+
+      <div class="process-grid reveal">
+        <article class="process-step">
+          <strong>01</strong>
+          <h3 data-i18n="process1Title">Understand</h3>
+          <p data-i18n="process1Text">
+            Clarify the user flow, business rules, API behavior, constraints, and definition
+            of done.
+          </p>
+        </article>
+
+        <article class="process-step">
+          <strong>02</strong>
+          <h3 data-i18n="process2Title">Structure</h3>
+          <p data-i18n="process2Text">
+            Define state, responsibilities, data flow, failure behavior, and architecture
+            boundaries.
+          </p>
+        </article>
+
+        <article class="process-step">
+          <strong>03</strong>
+          <h3 data-i18n="process3Title">Implement</h3>
+          <p data-i18n="process3Text">
+            Build the feature with reusable UI, reliable integration, and explicit error
+            handling.
+          </p>
+        </article>
+
+        <article class="process-step">
+          <strong>04</strong>
+          <h3 data-i18n="process4Title">Validate</h3>
+          <p data-i18n="process4Text">
+            Review edge cases, responsiveness, failure states, maintainability, and delivery
+            requirements.
           </p>
         </article>
       </div>
     </section>
 
     <section class="section container" id="contact">
-      <div class="section-head reveal">
+      <div class="contact-shell reveal">
         <div>
-          <div class="section-label">Contact</div>
-          <h2 data-i18n="contactTitle">Let’s Discuss Your Android Project</h2>
-        </div>
+          <div class="section-kicker" data-i18n="kickerContact">Contact</div>
 
-        <p data-i18n="contactDescription">
-          Available for remote freelance and contract work. Share the product requirements,
-          current challenges, or the feature scope you need to implement.
-        </p>
-      </div>
+          <h2 data-i18n="contactTitle">
+            Have an Android product to build or improve?
+          </h2>
 
-      <div class="contact-grid">
-        <div class="contact-card glass reveal delay-1">
-          <h3 data-i18n="contactCardTitle">Ready for production-oriented Android work.</h3>
-          <p data-i18n="contactCardText">
-            I work on mobile products that require reliable networking, authentication,
-            maintainable architecture, and clear user flows.
+          <p data-i18n="contactDescription">
+            Share the current product stage, technical challenge, or feature scope. I am
+            available for remote freelance and contract Android development.
           </p>
 
-          <div class="cta">
-            <a class="btn primary" href="mailto:erfanmusicmoghaddam@gmail.com">
+          <div class="contact-actions">
+            <a class="button primary" href="mailto:erfanmusicmoghaddam@gmail.com">
               <span data-i18n="sendEmail">Send Email</span>
             </a>
 
             <a
-              class="btn secondary"
+              class="button"
               href="https://www.linkedin.com/in/erfan-moghaddam-co/"
               target="_blank"
               rel="noopener noreferrer"
@@ -1950,7 +2185,7 @@
             </a>
 
             <a
-              class="btn secondary"
+              class="button"
               href="https://github.com/erfan-moghaddam"
               target="_blank"
               rel="noopener noreferrer"
@@ -1960,20 +2195,29 @@
           </div>
         </div>
 
-        <div class="contact-list reveal delay-2">
+        <div class="contact-list">
           <a class="contact-item" href="mailto:erfanmusicmoghaddam@gmail.com">
-            <div class="contact-icon">✉</div>
+            <div class="contact-icon">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <rect x="3" y="5" width="18" height="14" rx="2"></rect>
+                <path d="m4 7 8 6 8-6"></path>
+              </svg>
+            </div>
             <div>
               <strong data-i18n="emailLabel">Email</strong>
-              <span>erfanmusicmoghaddam@gmail.com</span>
+              <span class="ltr-value" dir="ltr">erfanmusicmoghaddam@gmail.com</span>
             </div>
           </a>
 
           <a class="contact-item" href="tel:+989300661383">
-            <div class="contact-icon">☎</div>
+            <div class="contact-icon">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M7 4h3l2 5-2 1.5a14 14 0 0 0 3.5 3.5L15 12l5 2v3a2 2 0 0 1-2 2C10.8 19 5 13.2 5 6a2 2 0 0 1 2-2Z"></path>
+              </svg>
+            </div>
             <div>
               <strong data-i18n="phoneLabel">Phone</strong>
-              <span>+98 930 066 1383</span>
+              <span class="ltr-value" dir="ltr">+98 930 066 1383</span>
             </div>
           </a>
 
@@ -1983,15 +2227,26 @@
             target="_blank"
             rel="noopener noreferrer"
           >
-            <div class="contact-icon">in</div>
+            <div class="contact-icon">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <rect x="4" y="9" width="4" height="11"></rect>
+                <circle cx="6" cy="5.5" r="2"></circle>
+                <path d="M12 20v-6a4 4 0 0 1 8 0v6M12 9v11"></path>
+              </svg>
+            </div>
             <div>
               <strong>LinkedIn</strong>
-              <span>linkedin.com/in/erfan-moghaddam-co</span>
+              <span class="ltr-value" dir="ltr">linkedin.com/in/erfan-moghaddam-co</span>
             </div>
           </a>
 
           <div class="contact-item">
-            <div class="contact-icon">⌖</div>
+            <div class="contact-icon">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M12 21s6-5.4 6-11a6 6 0 1 0-12 0c0 5.6 6 11 6 11Z"></path>
+                <circle cx="12" cy="10" r="2.2"></circle>
+              </svg>
+            </div>
             <div>
               <strong data-i18n="locationLabel">Location</strong>
               <span data-i18n="locationValue">Iran · Available for remote work</span>
@@ -2003,7 +2258,7 @@
   </main>
 
   <footer class="container">
-    <span>© 2026 Erfan Moghaddam · </span>
+    © 2026 Erfan Moghaddam ·
     <span data-i18n="footerText">Android Developer Portfolio</span>
   </footer>
 
@@ -2011,102 +2266,111 @@
     const translations = {
       en: {
         menu: "Menu",
-        navAbout: "About",
-        navExpertise: "Expertise",
-        navWork: "Selected Work",
-        navServices: "Services",
+        kickerWork: "Selected Work",
+        kickerPublic: "Public Work",
+        kickerCapabilities: "Capabilities",
+        kickerProcess: "Process",
+        kickerContact: "Contact",
+        navWork: "Work",
+        navCapabilities: "Capabilities",
+        navProcess: "Process",
         navContact: "Contact",
-        downloadCv: "Download CV",
+        hireMe: "Discuss a Project",
         availability: "Available for remote freelance and contract work",
         heroTitle:
-          'Building reliable <span class="hero-highlight">Android products</span> for real-world use.',
-        heroText:
+          'I build reliable <span class="accent">Android products</span> for real-world use.',
+        heroDescription:
           "Android Developer specializing in Kotlin, Jetpack Compose, Clean Architecture, authentication, and resilient REST API integration.",
         viewWork: "View Selected Work",
-        startProject: "Discuss a Project",
-        heroNote1: "Kotlin & Jetpack Compose",
-        heroNote2: "Clean Architecture & MVVM",
-        heroNote3: "REST APIs & Authentication",
-        identityText:
-          "Android Developer focused on maintainable architecture, reliable application flows, and production-oriented mobile experiences.",
-        aboutTitle: "About Me",
-        aboutDescription:
-          "I turn product requirements and interface designs into maintainable Android applications. My work extends beyond screens to networking, session management, error handling, localization, and predictable application state.",
-        aboutCard1Title: "Product-Oriented Development",
-        aboutCard1Text:
-          "Building mobile applications around real product requirements, user journeys, and operational constraints.",
-        aboutCard2Title: "Reliable App Flows",
-        aboutCard2Text:
-          "Designing authentication, session, payment, and API communication flows that remain predictable under failure conditions.",
-        aboutCard3Title: "Maintainable Architecture",
-        aboutCard3Text:
-          "Structuring code with separation of concerns, reusable components, and architecture that supports future development.",
-        expertiseTitle: "Technical Capabilities",
-        expertiseDescription:
-          "A practical Android stack for modern interfaces, stable networking, maintainable architecture, and production-ready application workflows.",
-        androidStackTitle: "Android & UI",
-        architectureStackTitle: "Architecture & Integration",
-        workTitle: "Private Product Experience",
+        discussProject: "Discuss a Project",
+        downloadCv: "Download CV",
+        profileText:
+          "Building maintainable Android applications with reliable product flows and clear technical decisions.",
+        proofPrivate: "Anonymized private Android products",
+        proofPrimary: "Primary Android development language",
+        proofUi: "Modern declarative mobile interfaces",
+        proofRemote: "Available for freelance and contract work",
+        workTitle: "Work built around real product constraints.",
         workDescription:
-          "These case studies are intentionally anonymized. They describe the technical nature of the work without exposing client names, proprietary interfaces, internal roadmaps, or confidential assets.",
-        privateOperationalBadge: "Private operational product",
-        operationalTitle: "Operational Smart-Mobility Android Platform",
-        operationalDescription:
-          "An Android application supporting field and operator workflows in a vehicle-related service environment. The product combines camera-assisted identification, server-backed processing, payment operations, and structured application states.",
-        operationalFeature1: "Camera-assisted vehicle identification workflow",
-        operationalFeature2: "Secure image and data exchange with backend services",
-        operationalFeature3: "Payment and operational status handling",
-        operationalFeature4:
+          "Private product experience is presented as anonymized case studies. Client names, proprietary screens, internal roadmaps, and confidential assets are intentionally excluded.",
+        operationalBadge: "Operational Android product",
+        operationalTitle: "Smart-mobility platform for operator workflows",
+        operationalSummary:
+          "An Android application supporting frequent operational workflows in a vehicle-related service environment. The product combines camera-assisted identification, server-backed processing, payments, and structured application states.",
+        roleLabel: "Role",
+        focusLabel: "Focus",
+        environmentLabel: "Environment",
+        operationalRole: "Android development and integration",
+        operationalFocus: "Reliability and operator speed",
+        operationalEnvironment: "Private production system",
+        operationalFeature1: "Camera-assisted identification and image transfer",
+        operationalFeature2:
           "Authentication, session management, and request retry logic",
-        operationalFeature5:
-          "Fast Compose interface designed for frequent operational use",
-        conceptVisualNote:
-          "The visual is an original conceptual mockup created for this portfolio. It does not reproduce any client screen, logo, or proprietary design.",
-        mockupLabel1: "Secure session",
-        mockupLabel2: "Vehicle workflow",
-        mockupLabel3: "API status",
-        privateConsumerBadge: "Private consumer product",
-        consumerTitle: "Consumer Smart-Parking Android Application",
-        consumerDescription:
+        operationalFeature3: "Payment and operational-status workflows",
+        operationalFeature4: "Fast, reusable Jetpack Compose interface",
+        confidentialNote:
+          "Conceptual visual only. No client screen, logo, product name, or proprietary design is reproduced.",
+        labelSecure: "Secure session",
+        labelVehicle: "Vehicle workflow",
+        labelStatus: "API status",
+        consumerBadge: "Consumer Android product",
+        consumerTitle: "Smart-parking application for end users",
+        consumerSummary:
           "A consumer-facing Android product designed around account access, wallet and payment flows, biometric authentication, vehicle-related security, and a low-friction parking experience.",
+        consumerRole: "Android product development",
+        consumerFocus: "Secure and simple user journeys",
+        consumerEnvironment: "Private consumer product",
         consumerFeature1: "Wallet and balance-based payment experience",
         consumerFeature2:
           "Biometric authentication for selected sensitive actions",
-        consumerFeature3: "Secure account, vehicle, and session workflows",
+        consumerFeature3: "Localized and reusable Compose components",
         consumerFeature4:
-          "Localized and reusable Jetpack Compose components",
-        consumerFeature5:
-          "Error handling and predictable UI state across network operations",
-        mockupLabel4: "Wallet flow",
-        mockupLabel5: "Biometric access",
-        mockupLabel6: "Localized UI",
-        publicWorkTitle: "Publicly Reviewable Projects",
-        publicWorkDescription:
-          "Public projects that demonstrate backend experimentation, technical communication, and portfolio presentation.",
-        cryptoDescription:
-          "A Python-based API developed for cryptocurrency market analysis and signal-generation experiments, with modular service responsibilities and data-processing flows.",
-        portfolioDescription:
-          "A responsive bilingual portfolio created to present technical experience, selected work, professional services, and direct contact options.",
+          "Predictable UI state across network operations",
+        labelWallet: "Wallet flow",
+        labelBiometric: "Biometric access",
+        labelLocalized: "Localized UI",
+        publicTitle: "Projects you can review directly.",
+        publicDescription:
+          "Public repositories demonstrating API experimentation, technical presentation, and project communication.",
+        cryptoText:
+          "A Python-based API for cryptocurrency market-analysis and signal-generation experiments, with modular service responsibilities and data-processing flows.",
+        portfolioText:
+          "A responsive bilingual portfolio created to present technical experience, anonymized case studies, professional services, and direct contact options.",
         viewRepository: "View Repository",
         viewSource: "View Source",
-        servicesTitle: "How I Can Help",
-        servicesDescription:
-          "Focused Android development services for new products and existing mobile applications.",
-        service1Title: "Android App Development",
-        service1Text:
-          "Building Android applications and features with Kotlin, Jetpack Compose, and maintainable architecture.",
-        service2Title: "API & Authentication Integration",
-        service2Text:
-          "Integrating REST APIs, access tokens, refresh tokens, sessions, and structured network error handling.",
-        service3Title: "Refactoring & App Improvement",
-        service3Text:
-          "Improving existing codebases, fixing application flows, reducing coupling, and creating reusable Compose components.",
-        contactTitle: "Let’s Discuss Your Android Project",
+        capabilitiesTitle: "Focused Android development services.",
+        capabilitiesDescription:
+          "Support for new products, existing applications, and technical flows that require maintainable architecture and reliable integration.",
+        capability1Title: "Android Product Development",
+        capability1Text:
+          "Kotlin and Jetpack Compose implementation for new applications, features, and responsive mobile interfaces.",
+        capability2Title: "API & Authentication Integration",
+        capability2Text:
+          "REST APIs, access tokens, refresh-token workflows, session management, retries, and structured network-error handling.",
+        capability3Title: "Architecture & Refactoring",
+        capability3Text:
+          "Improving separation of concerns, reducing coupling, restructuring application flows, and creating reusable Compose components.",
+        capability4Title: "Existing App Improvement",
+        capability4Text:
+          "Bug investigation, feature implementation, error-state improvements, and maintenance of existing Android codebases.",
+        processTitle: "A clear path from requirement to release.",
+        processDescription:
+          "A practical workflow that keeps product goals, technical risk, and maintainability visible throughout implementation.",
+        process1Title: "Understand",
+        process1Text:
+          "Clarify the user flow, business rules, API behavior, constraints, and definition of done.",
+        process2Title: "Structure",
+        process2Text:
+          "Define state, responsibilities, data flow, failure behavior, and architecture boundaries.",
+        process3Title: "Implement",
+        process3Text:
+          "Build the feature with reusable UI, reliable integration, and explicit error handling.",
+        process4Title: "Validate",
+        process4Text:
+          "Review edge cases, responsiveness, failure states, maintainability, and delivery requirements.",
+        contactTitle: "Have an Android product to build or improve?",
         contactDescription:
-          "Available for remote freelance and contract work. Share the product requirements, current challenges, or the feature scope you need to implement.",
-        contactCardTitle: "Ready for production-oriented Android work.",
-        contactCardText:
-          "I work on mobile products that require reliable networking, authentication, maintainable architecture, and clear user flows.",
+          "Share the current product stage, technical challenge, or feature scope. I am available for remote freelance and contract Android development.",
         sendEmail: "Send Email",
         emailLabel: "Email",
         phoneLabel: "Phone",
@@ -2117,102 +2381,111 @@
 
       fa: {
         menu: "منو",
-        navAbout: "درباره من",
-        navExpertise: "تخصص‌ها",
+        kickerWork: "نمونه‌کارهای منتخب",
+        kickerPublic: "پروژه‌های عمومی",
+        kickerCapabilities: "توانمندی‌ها",
+        kickerProcess: "فرآیند همکاری",
+        kickerContact: "تماس",
         navWork: "نمونه‌کارها",
-        navServices: "خدمات",
+        navCapabilities: "توانمندی‌ها",
+        navProcess: "فرآیند",
         navContact: "تماس",
-        downloadCv: "دانلود رزومه",
+        hireMe: "گفتگو درباره پروژه",
         availability: "آماده همکاری ریموت، فریلنس و قراردادی",
         heroTitle:
-          'ساخت <span class="hero-highlight">محصولات اندرویدی مطمئن</span> برای استفاده واقعی.',
-        heroText:
+          'من <span class="accent">محصولات اندرویدی مطمئن</span> برای استفاده واقعی می‌سازم.',
+        heroDescription:
           "توسعه‌دهنده اندروید با تمرکز بر Kotlin، Jetpack Compose، معماری تمیز، احراز هویت و یکپارچه‌سازی پایدار REST API.",
         viewWork: "مشاهده نمونه‌کارها",
-        startProject: "گفتگو درباره پروژه",
-        heroNote1: "Kotlin و Jetpack Compose",
-        heroNote2: "Clean Architecture و MVVM",
-        heroNote3: "REST API و احراز هویت",
-        identityText:
-          "توسعه‌دهنده اندروید با تمرکز بر معماری قابل نگهداری، جریان‌های مطمئن اپلیکیشن و تجربه‌های موبایلی محصول‌محور.",
-        aboutTitle: "درباره من",
-        aboutDescription:
-          "نیازمندی‌های محصول و طراحی رابط کاربری را به اپلیکیشن‌های اندرویدی قابل نگهداری تبدیل می‌کنم. فعالیت من فقط به ساخت صفحه محدود نیست و شبکه، مدیریت نشست، خطاها، بومی‌سازی و وضعیت قابل پیش‌بینی اپلیکیشن را نیز پوشش می‌دهد.",
-        aboutCard1Title: "توسعه محصول‌محور",
-        aboutCard1Text:
-          "ساخت اپلیکیشن موبایل براساس نیاز واقعی محصول، مسیر کاربر و محدودیت‌های محیط عملیاتی.",
-        aboutCard2Title: "جریان‌های مطمئن اپلیکیشن",
-        aboutCard2Text:
-          "طراحی احراز هویت، نشست، پرداخت و ارتباط API به‌گونه‌ای که در شرایط خطا نیز قابل پیش‌بینی باشند.",
-        aboutCard3Title: "معماری قابل نگهداری",
-        aboutCard3Text:
-          "تفکیک مسئولیت‌ها، ساخت اجزای قابل استفاده مجدد و معماری مناسب توسعه آینده.",
-        expertiseTitle: "توانمندی‌های فنی",
-        expertiseDescription:
-          "مجموعه‌ای کاربردی برای رابط مدرن، شبکه پایدار، معماری قابل نگهداری و جریان‌های آماده استفاده واقعی.",
-        androidStackTitle: "Android و رابط کاربری",
-        architectureStackTitle: "معماری و یکپارچه‌سازی",
-        workTitle: "تجربه محصولات خصوصی",
+        discussProject: "گفتگو درباره پروژه",
+        downloadCv: "دانلود رزومه",
+        profileText:
+          "ساخت اپلیکیشن‌های قابل نگهداری اندروید با جریان‌های مطمئن محصول و تصمیم‌های فنی روشن.",
+        proofPrivate: "محصول خصوصی اندرویدی با ارائه ناشناس",
+        proofPrimary: "زبان اصلی توسعه اندروید",
+        proofUi: "رابط‌های مدرن و اعلانی موبایل",
+        proofRemote: "آماده همکاری فریلنس و قراردادی",
+        workTitle: "محصولاتی ساخته‌شده برای محدودیت‌های واقعی.",
         workDescription:
-          "این نمونه‌کارها عمداً ناشناس شده‌اند. ماهیت فنی کار را بدون نمایش نام مشتری، رابط اختصاصی، برنامه داخلی یا دارایی محرمانه توضیح می‌دهند.",
-        privateOperationalBadge: "محصول عملیاتی خصوصی",
-        operationalTitle: "پلتفرم عملیاتی اندرویدی در حوزه حمل‌ونقل هوشمند",
-        operationalDescription:
-          "اپلیکیشنی اندرویدی برای پشتیبانی از جریان‌های میدانی و اپراتوری در یک محیط خدمات مرتبط با خودرو. محصول شامل شناسایی با کمک دوربین، پردازش سمت سرور، عملیات پرداخت و وضعیت‌های ساختاریافته اپلیکیشن است.",
-        operationalFeature1: "جریان شناسایی خودرو با کمک دوربین",
-        operationalFeature2: "تبادل امن تصویر و داده با سرویس‌های بک‌اند",
-        operationalFeature3: "مدیریت پرداخت و وضعیت عملیات",
-        operationalFeature4:
-          "احراز هویت، مدیریت نشست و منطق تلاش مجدد درخواست‌ها",
-        operationalFeature5:
-          "رابط سریع Compose برای استفاده مکرر در محیط عملیاتی",
-        conceptVisualNote:
-          "تصویر نمایش‌داده‌شده یک ماکاپ مفهومی و مستقل برای همین پرتفولیو است و هیچ صفحه، لوگو یا طراحی اختصاصی مشتری را بازسازی نمی‌کند.",
-        mockupLabel1: "نشست امن",
-        mockupLabel2: "جریان خودرو",
-        mockupLabel3: "وضعیت API",
-        privateConsumerBadge: "محصول مصرف‌کننده خصوصی",
-        consumerTitle: "اپلیکیشن اندرویدی پارکینگ هوشمند برای کاربران",
-        consumerDescription:
-          "محصولی اندرویدی برای کاربران نهایی با تمرکز بر ورود به حساب، کیف پول و پرداخت، احراز هویت بیومتریک، امنیت مرتبط با خودرو و تجربه ساده پارکینگ.",
+          "تجربه محصولات خصوصی به‌صورت مطالعه موردی ناشناس ارائه شده است. نام مشتری، رابط اختصاصی، برنامه داخلی و دارایی محرمانه عمداً نمایش داده نمی‌شوند.",
+        operationalBadge: "محصول عملیاتی اندروید",
+        operationalTitle: "پلتفرم حمل‌ونقل هوشمند برای جریان‌های اپراتوری",
+        operationalSummary:
+          "اپلیکیشنی اندرویدی برای پشتیبانی از عملیات پرتکرار در محیط خدمات مرتبط با خودرو. محصول شامل شناسایی با کمک دوربین، پردازش سمت سرور، پرداخت و وضعیت‌های ساختاریافته اپلیکیشن است.",
+        roleLabel: "نقش",
+        focusLabel: "تمرکز",
+        environmentLabel: "محیط",
+        operationalRole: "توسعه و یکپارچه‌سازی اندروید",
+        operationalFocus: "پایداری و سرعت اپراتور",
+        operationalEnvironment: "سیستم خصوصی عملیاتی",
+        operationalFeature1: "شناسایی با کمک دوربین و انتقال تصویر",
+        operationalFeature2:
+          "احراز هویت، مدیریت نشست و منطق تلاش مجدد درخواست",
+        operationalFeature3: "جریان‌های پرداخت و وضعیت عملیات",
+        operationalFeature4: "رابط سریع و قابل استفاده مجدد Jetpack Compose",
+        confidentialNote:
+          "تصویر کاملاً مفهومی است و هیچ صفحه، لوگو، نام محصول یا طراحی اختصاصی مشتری را بازسازی نمی‌کند.",
+        labelSecure: "نشست امن",
+        labelVehicle: "جریان خودرو",
+        labelStatus: "وضعیت API",
+        consumerBadge: "محصول اندرویدی کاربرمحور",
+        consumerTitle: "اپلیکیشن پارکینگ هوشمند برای کاربران نهایی",
+        consumerSummary:
+          "محصولی اندرویدی برای کاربران نهایی با تمرکز بر حساب کاربری، کیف پول و پرداخت، احراز هویت بیومتریک، امنیت مرتبط با خودرو و تجربه ساده پارکینگ.",
+        consumerRole: "توسعه محصول اندروید",
+        consumerFocus: "مسیرهای ساده و امن کاربر",
+        consumerEnvironment: "محصول خصوصی مصرف‌کننده",
         consumerFeature1: "تجربه پرداخت مبتنی بر کیف پول و موجودی",
         consumerFeature2:
           "احراز هویت بیومتریک برای عملیات حساس منتخب",
-        consumerFeature3: "جریان‌های امن حساب، خودرو و نشست",
+        consumerFeature3: "کامپوننت‌های بومی‌سازی‌شده و قابل استفاده مجدد Compose",
         consumerFeature4:
-          "کامپوننت‌های بومی‌سازی‌شده و قابل استفاده مجدد Compose",
-        consumerFeature5:
-          "مدیریت خطا و وضعیت قابل پیش‌بینی رابط در عملیات شبکه",
-        mockupLabel4: "جریان کیف پول",
-        mockupLabel5: "دسترسی بیومتریک",
-        mockupLabel6: "رابط بومی‌شده",
-        publicWorkTitle: "پروژه‌های عمومی قابل بررسی",
-        publicWorkDescription:
-          "پروژه‌های عمومی برای نمایش تجربه بک‌اند، ارتباط فنی و ارائه حرفه‌ای نمونه‌کارها.",
-        cryptoDescription:
-          "API مبتنی بر پایتون برای آزمایش تحلیل بازار رمزارز و تولید سیگنال، همراه با تفکیک سرویس‌ها و جریان‌های پردازش داده.",
-        portfolioDescription:
-          "پرتفولیوی واکنش‌گرا و دو‌زبانه برای ارائه تجربه فنی، نمونه‌کارها، خدمات حرفه‌ای و راه‌های تماس مستقیم.",
+          "وضعیت قابل پیش‌بینی رابط در عملیات شبکه",
+        labelWallet: "جریان کیف پول",
+        labelBiometric: "دسترسی بیومتریک",
+        labelLocalized: "رابط بومی‌شده",
+        publicTitle: "پروژه‌هایی که مستقیماً قابل بررسی هستند.",
+        publicDescription:
+          "مخزنهای عمومی برای نمایش تجربه API، ارائه فنی و ارتباط مؤثر درباره پروژه.",
+        cryptoText:
+          "API مبتنی بر پایتون برای آزمایش تحلیل بازار رمزارز و تولید سیگنال، همراه با تفکیک مسئولیت سرویس‌ها و جریان‌های پردازش داده.",
+        portfolioText:
+          "پرتفولیوی واکنش‌گرا و دوزبانه برای ارائه تجربه فنی، مطالعات موردی ناشناس، خدمات حرفه‌ای و راه‌های تماس مستقیم.",
         viewRepository: "مشاهده مخزن",
         viewSource: "مشاهده کد",
-        servicesTitle: "چطور می‌توانم کمک کنم",
-        servicesDescription:
-          "خدمات متمرکز توسعه اندروید برای محصولات جدید و اپلیکیشن‌های موجود.",
-        service1Title: "توسعه اپلیکیشن اندروید",
-        service1Text:
-          "ساخت اپلیکیشن و قابلیت‌های اندرویدی با Kotlin، Jetpack Compose و معماری قابل نگهداری.",
-        service2Title: "یکپارچه‌سازی API و احراز هویت",
-        service2Text:
-          "اتصال REST API، توکن دسترسی، رفرش توکن، نشست و مدیریت ساختاریافته خطاهای شبکه.",
-        service3Title: "بازآرایی و بهبود اپلیکیشن",
-        service3Text:
-          "بهبود کد موجود، اصلاح جریان‌ها، کاهش وابستگی و ساخت کامپوننت‌های قابل استفاده مجدد Compose.",
-        contactTitle: "درباره پروژه اندرویدی شما گفتگو کنیم",
+        capabilitiesTitle: "خدمات متمرکز توسعه اندروید.",
+        capabilitiesDescription:
+          "پشتیبانی از محصول جدید، اپلیکیشن موجود و جریان‌های فنی نیازمند معماری قابل نگهداری و یکپارچه‌سازی پایدار.",
+        capability1Title: "توسعه محصول اندروید",
+        capability1Text:
+          "پیاده‌سازی Kotlin و Jetpack Compose برای اپلیکیشن جدید، قابلیت‌ها و رابط‌های واکنش‌گرای موبایل.",
+        capability2Title: "یکپارچه‌سازی API و احراز هویت",
+        capability2Text:
+          "REST API، توکن دسترسی، جریان رفرش توکن، مدیریت نشست، تلاش مجدد و مدیریت ساختاریافته خطاهای شبکه.",
+        capability3Title: "معماری و بازآرایی",
+        capability3Text:
+          "بهبود تفکیک مسئولیت‌ها، کاهش وابستگی، بازطراحی جریان اپلیکیشن و ساخت کامپوننت‌های قابل استفاده مجدد Compose.",
+        capability4Title: "بهبود اپلیکیشن موجود",
+        capability4Text:
+          "بررسی باگ، پیاده‌سازی قابلیت، بهبود وضعیت خطا و نگهداری کدبیس‌های اندرویدی موجود.",
+        processTitle: "مسیر روشن از نیازمندی تا تحویل.",
+        processDescription:
+          "فرآیندی کاربردی که هدف محصول، ریسک فنی و قابلیت نگهداری را در تمام مراحل پیاده‌سازی شفاف نگه می‌دارد.",
+        process1Title: "درک مسئله",
+        process1Text:
+          "شفاف‌سازی جریان کاربر، قوانین کسب‌وکار، رفتار API، محدودیت‌ها و تعریف اتمام کار.",
+        process2Title: "ساختاربندی",
+        process2Text:
+          "تعریف وضعیت، مسئولیت‌ها، جریان داده، رفتار خطا و مرزهای معماری.",
+        process3Title: "پیاده‌سازی",
+        process3Text:
+          "ساخت قابلیت با رابط قابل استفاده مجدد، اتصال مطمئن و مدیریت صریح خطا.",
+        process4Title: "اعتبارسنجی",
+        process4Text:
+          "بررسی شرایط مرزی، واکنش‌گرایی، وضعیت خطا، قابلیت نگهداری و نیازهای تحویل.",
+        contactTitle: "محصول اندرویدی برای ساخت یا بهبود دارید؟",
         contactDescription:
-          "آماده همکاری ریموت، فریلنس و قراردادی هستم. نیازهای محصول، مشکل فعلی یا محدوده قابلیتی را که باید پیاده‌سازی شود ارسال کنید.",
-        contactCardTitle: "آماده همکاری روی محصولات واقعی اندرویدی.",
-        contactCardText:
-          "روی محصولاتی کار می‌کنم که به شبکه مطمئن، احراز هویت، معماری قابل نگهداری و مسیرهای روشن کاربری نیاز دارند.",
+          "مرحله فعلی محصول، چالش فنی یا محدوده قابلیت را ارسال کنید. برای همکاری ریموت، فریلنس و قراردادی آماده‌ام.",
         sendEmail: "ارسال ایمیل",
         emailLabel: "ایمیل",
         phoneLabel: "تلفن",
@@ -2222,7 +2495,11 @@
       }
     };
 
+    const root = document.documentElement;
+    const body = document.body;
     const langButton = document.getElementById("langBtn");
+    const themeButton = document.getElementById("themeBtn");
+    const themeIcon = document.getElementById("themeIcon");
     const mobileMenu = document.getElementById("mobileMenu");
     const menuButton = document.getElementById("menuBtn");
     const closeMenuButton = document.getElementById("closeMenuBtn");
@@ -2231,9 +2508,9 @@
       const dictionary = translations[language];
       const isPersian = language === "fa";
 
-      document.documentElement.lang = language;
-      document.documentElement.dir = isPersian ? "rtl" : "ltr";
-      document.body.classList.toggle("fa", isPersian);
+      root.lang = language;
+      root.dir = isPersian ? "rtl" : "ltr";
+      body.classList.toggle("fa", isPersian);
 
       document.querySelectorAll("[data-i18n]").forEach((element) => {
         const key = element.dataset.i18n;
@@ -2253,21 +2530,37 @@
       localStorage.setItem("portfolio_lang", language);
     }
 
-    function closeMenu() {
-      mobileMenu.classList.remove("open");
-      mobileMenu.setAttribute("aria-hidden", "true");
-      document.body.style.overflow = "";
+    function applyTheme(theme) {
+      root.dataset.theme = theme;
+
+      themeIcon.innerHTML =
+        theme === "dark"
+          ? '<path d="M20 15.5A8 8 0 0 1 8.5 4 8.5 8.5 0 1 0 20 15.5Z"></path>'
+          : '<circle cx="12" cy="12" r="4"></circle><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"></path>';
+
+      localStorage.setItem("portfolio_theme", theme);
     }
 
     function openMenu() {
       mobileMenu.classList.add("open");
       mobileMenu.setAttribute("aria-hidden", "false");
-      document.body.style.overflow = "hidden";
+      body.style.overflow = "hidden";
+    }
+
+    function closeMenu() {
+      mobileMenu.classList.remove("open");
+      mobileMenu.setAttribute("aria-hidden", "true");
+      body.style.overflow = "";
     }
 
     langButton.addEventListener("click", () => {
       const current = localStorage.getItem("portfolio_lang") || "en";
       applyLanguage(current === "en" ? "fa" : "en");
+    });
+
+    themeButton.addEventListener("click", () => {
+      const current = root.dataset.theme || "dark";
+      applyTheme(current === "dark" ? "light" : "dark");
     });
 
     menuButton.addEventListener("click", openMenu);
@@ -2298,18 +2591,40 @@
           }
         });
       },
-      { threshold: 0.12 }
+      { threshold: 0.1 }
     );
 
     document.querySelectorAll(".reveal").forEach((element) => {
       revealObserver.observe(element);
     });
 
+    const navLinks = [...document.querySelectorAll(".navlinks a[data-section]")];
+    const watchedSections = navLinks
+      .map((link) => document.getElementById(link.dataset.section))
+      .filter(Boolean);
+
+    const sectionObserver = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            navLinks.forEach((link) => {
+              link.classList.toggle(
+                "active",
+                link.dataset.section === entry.target.id
+              );
+            });
+          }
+        });
+      },
+      { rootMargin: "-40% 0px -50% 0px", threshold: 0 }
+    );
+
+    watchedSections.forEach((section) => sectionObserver.observe(section));
+
     const progress = document.getElementById("progress");
 
     function updateProgress() {
-      const scrollable =
-        document.documentElement.scrollHeight - window.innerHeight;
+      const scrollable = root.scrollHeight - window.innerHeight;
       const value = scrollable > 0 ? window.scrollY / scrollable : 0;
       progress.style.transform = `scaleX(${Math.min(1, Math.max(0, value))})`;
     }
@@ -2317,6 +2632,10 @@
     window.addEventListener("scroll", updateProgress, { passive: true });
     updateProgress();
 
+    const storedTheme = localStorage.getItem("portfolio_theme");
+    const systemPrefersLight = window.matchMedia("(prefers-color-scheme: light)").matches;
+
+    applyTheme(storedTheme || (systemPrefersLight ? "light" : "dark"));
     applyLanguage(localStorage.getItem("portfolio_lang") || "en");
   </script>
 </body>
