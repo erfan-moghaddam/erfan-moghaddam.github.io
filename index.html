@@ -8,7 +8,7 @@
 
   <meta
     name="description"
-    content="Android Developer specializing in Kotlin, Jetpack Compose, Clean Architecture, authentication, and resilient REST API integration. Available for remote freelance and contract projects."
+    content="Android Developer building Kotlin and Jetpack Compose products, including Nexpark, a publicly released smart-parking app. Available for remote freelance and contract projects."
   >
   <meta
     name="keywords"
@@ -24,7 +24,7 @@
   <meta property="og:title" content="Erfan Moghaddam | Android Developer">
   <meta
     property="og:description"
-    content="Android Developer building reliable, maintainable and API-driven mobile products."
+    content="Android Developer behind the Android experience of Nexpark, a publicly released smart-parking product built with Kotlin and Jetpack Compose."
   >
   <meta property="og:url" content="https://erfan-moghaddam.github.io/">
 
@@ -725,6 +725,78 @@
       transform: translateY(-6px);
       border-color: color-mix(in srgb, var(--accent) 28%, var(--line));
       box-shadow: var(--shadow);
+    }
+
+
+    .case-study.released {
+      border-color: color-mix(in srgb, var(--accent) 34%, var(--line));
+      background: linear-gradient(135deg, var(--accent-soft), transparent 55%), var(--surface);
+    }
+
+    .released .case-badge {
+      color: var(--accent);
+      border-color: color-mix(in srgb, var(--accent) 28%, transparent);
+      background: var(--accent-soft);
+    }
+
+    .release-links {
+      margin-top: 26px;
+      padding-top: 22px;
+      border-top: 1px solid var(--line);
+    }
+
+    .release-label {
+      display: block;
+      margin-bottom: 10px;
+      font-size: 12px;
+      font-weight: 800;
+    }
+
+    .release-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 9px;
+      margin-bottom: 20px;
+    }
+
+    .release-actions .button {
+      min-height: 46px;
+      padding: 10px 14px;
+      text-align: center;
+    }
+
+    .release-note,
+    .product-preview figcaption {
+      margin: 0;
+      color: var(--muted);
+      font-size: 12px;
+      line-height: 1.8;
+    }
+
+    .product-preview {
+      display: grid;
+      align-content: center;
+      justify-items: center;
+      gap: 18px;
+      min-width: 0;
+      margin: 0;
+      padding: 28px 16px;
+      border: 1px solid var(--line-soft);
+      border-radius: 24px;
+      background: radial-gradient(ellipse at center, rgba(255, 219, 0, 0.11), transparent 70%);
+    }
+
+    .product-preview img {
+      width: min(100%, 258px);
+      height: auto;
+      border: 7px solid #20232a;
+      border-radius: 32px;
+      box-shadow: 0 25px 55px rgba(0, 0, 0, 0.26);
+    }
+
+    .product-preview figcaption {
+      max-width: 300px;
+      text-align: center;
     }
 
     .case-index {
@@ -1681,10 +1753,7 @@
             for real-world use.
           </h1>
 
-          <p class="hero-description" data-i18n="heroDescription">
-            Android Developer specializing in Kotlin, Jetpack Compose, Clean Architecture,
-            authentication, and resilient REST API integration.
-          </p>
+          <p class="hero-description" data-i18n="heroDescription">Android Developer specializing in Kotlin, Jetpack Compose, Clean Architecture, and resilient REST APIs. My work includes the publicly released Nexpark Android app.</p>
 
           <div class="hero-actions">
             <a class="button primary" href="#work">
@@ -1737,7 +1806,7 @@
       <div class="proof-strip reveal delay-2">
         <div class="proof-item">
           <strong>2</strong>
-          <span data-i18n="proofPrivate">Anonymized private Android products</span>
+          <span data-i18n="proofProducts">Android products · Nexpark publicly released</span>
         </div>
 
         <div class="proof-item">
@@ -1762,22 +1831,87 @@
 
       <div class="section-heading reveal">
         <h2 data-i18n="workTitle">Work built around real product constraints.</h2>
-        <p data-i18n="workDescription">
-          Private product experience is presented as anonymized case studies. Client names,
-          proprietary screens, internal roadmaps, and confidential assets are intentionally
-          excluded.
-        </p>
+        <p data-i18n="workDescription">Nexpark is now publicly available, with Android downloads and iOS store links below. My contribution is Android development; the operational product is presented as an anonymized case study.</p>
       </div>
 
-      <p class="visual-disclaimer" data-i18n="visualDisclaimer">
-        Interface visuals are original portfolio mockups and do not reproduce any private
-        product screen.
-      </p>
+      <p class="visual-disclaimer" data-i18n="visualDisclaimer">Nexpark is shown with an Android app screenshot. The operational case study uses an original portfolio mockup.</p>
 
       <div class="work-list">
+        <article class="case-study released reveal" id="nexpark">
+          <div>
+            <div class="case-index">01 / RELEASED</div>
+
+            <div class="case-badge" data-i18n="consumerBadge">Released · Publicly available</div>
+
+            <h3 data-i18n="consumerTitle">Nexpark — Smart parking for everyday use</h3>
+
+            <p class="case-summary" data-i18n="consumerSummary">The publicly released Nexpark consumer app brings account access, vehicle management, wallet and payment flows into one parking experience. I develop the native Android application with Kotlin and Jetpack Compose.</p>
+
+            <div class="case-details">
+              <div class="case-detail">
+                <strong data-i18n="roleLabel">Role</strong>
+                <span data-i18n="consumerRole">Android Developer · Kotlin & Compose</span>
+              </div>
+
+              <div class="case-detail">
+                <strong data-i18n="focusLabel">Focus</strong>
+                <span data-i18n="consumerFocus">Secure and simple user journeys</span>
+              </div>
+
+              <div class="case-detail">
+                <strong data-i18n="environmentLabel">Environment</strong>
+                <span data-i18n="consumerEnvironment">Public release · Android & iOS</span>
+              </div>
+            </div>
+
+            <div class="case-features">
+              <div class="case-feature" data-i18n="consumerFeature1">
+                Wallet and balance-based payment experience
+              </div>
+              <div class="case-feature" data-i18n="consumerFeature2">
+                Biometric authentication for selected sensitive actions
+              </div>
+              <div class="case-feature" data-i18n="consumerFeature3">
+                Localized and reusable Compose components
+              </div>
+              <div class="case-feature" data-i18n="consumerFeature4">
+                Predictable UI state across network operations
+              </div>
+            </div>
+
+            <div class="stack">
+              <span>Kotlin</span>
+              <span>Jetpack Compose</span>
+              <span>Wallet Flow</span>
+              <span>Biometric UX</span>
+              <span>Localization</span>
+            </div>
+
+            <div class="release-links">
+              <strong class="release-label" data-i18n="androidDownloads">Get the Android app</strong>
+              <div class="release-actions">
+                <a class="button primary" href="https://cafebazaar.ir/app/ir.sarava.mynexpark" target="_blank" rel="noopener noreferrer" data-i18n="downloadBazaar">Café Bazaar</a>
+                <a class="button" href="https://static.nexpark.ir/mynexpark/app/latest/mynexpark.apk" target="_blank" rel="noopener noreferrer" data-i18n="downloadApk">Direct APK download</a>
+              </div>
+              <strong class="release-label" data-i18n="iosDownloads">Also available on iOS</strong>
+              <div class="release-actions">
+                <a class="button" href="https://apps.apple.com/us/app/nexpark/id6802317642" target="_blank" rel="noopener noreferrer">App Store</a>
+                <a class="button" href="https://sibapp.com/applications/nexpark" target="_blank" rel="noopener noreferrer" data-i18n="downloadSibapp">SibApp</a>
+                <a class="button" href="https://www.nexpark.ir/" target="_blank" rel="noopener noreferrer" data-i18n="visitNexpark">Product website</a>
+              </div>
+              <p class="release-note" data-i18n="consumerReleaseNote">My contribution: Android development with Kotlin and Jetpack Compose. The iOS links provide access to the wider Nexpark product.</p>
+            </div>
+          </div>
+
+          <figure class="product-preview">
+            <img src="assets/public_splash.jpg" alt="Nexpark Android app launch screen" width="612" height="1316" loading="lazy" decoding="async">
+            <figcaption data-i18n="consumerPreview">Nexpark Android app · Launch screen</figcaption>
+          </figure>
+        </article>
+
         <article class="case-study reveal">
           <div>
-            <div class="case-index">01 / PRIVATE</div>
+            <div class="case-index">02 / PRIVATE</div>
 
             <div class="case-badge" data-i18n="operationalBadge">
               Operational Android product
@@ -1881,116 +2015,6 @@
                 </div>
 
                 <div class="ui-button">CONTINUE WORKFLOW</div>
-              </div>
-            </div>
-          </div>
-        </article>
-
-        <article class="case-study reveal">
-          <div>
-            <div class="case-index">02 / PRIVATE</div>
-
-            <div class="case-badge" data-i18n="consumerBadge">
-              Consumer Android product
-            </div>
-
-            <h3 data-i18n="consumerTitle">
-              Smart-parking application for end users
-            </h3>
-
-            <p class="case-summary" data-i18n="consumerSummary">
-              A consumer-facing Android product designed around account access, wallet and
-              payment flows, biometric authentication, vehicle-related security, and a
-              low-friction parking experience.
-            </p>
-
-            <div class="case-details">
-              <div class="case-detail">
-                <strong data-i18n="roleLabel">Role</strong>
-                <span data-i18n="consumerRole">Android product development</span>
-              </div>
-
-              <div class="case-detail">
-                <strong data-i18n="focusLabel">Focus</strong>
-                <span data-i18n="consumerFocus">Secure and simple user journeys</span>
-              </div>
-
-              <div class="case-detail">
-                <strong data-i18n="environmentLabel">Environment</strong>
-                <span data-i18n="consumerEnvironment">Private consumer product</span>
-              </div>
-            </div>
-
-            <div class="case-features">
-              <div class="case-feature" data-i18n="consumerFeature1">
-                Wallet and balance-based payment experience
-              </div>
-              <div class="case-feature" data-i18n="consumerFeature2">
-                Biometric authentication for selected sensitive actions
-              </div>
-              <div class="case-feature" data-i18n="consumerFeature3">
-                Localized and reusable Compose components
-              </div>
-              <div class="case-feature" data-i18n="consumerFeature4">
-                Predictable UI state across network operations
-              </div>
-            </div>
-
-            <div class="stack">
-              <span>Kotlin</span>
-              <span>Jetpack Compose</span>
-              <span>Wallet Flow</span>
-              <span>Biometric UX</span>
-              <span>Localization</span>
-            </div>
-          </div>
-
-          <div class="concept-stage blue" aria-label="Conceptual consumer Android interface">
-            <span class="concept-label label-one" data-i18n="labelWallet">Wallet flow</span>
-            <span class="concept-label label-two" data-i18n="labelBiometric">Biometric access</span>
-            <span class="concept-label label-three" data-i18n="labelLocalized">Localized UI</span>
-
-            <div class="device" aria-hidden="true">
-              <div class="device-screen">
-                <div class="ui-title"></div>
-                <div class="ui-subtitle"></div>
-
-                <div class="ui-card accent">
-                  <div class="ui-row">
-                    <div class="ui-icon">
-                      <svg viewBox="0 0 24 24">
-                        <path d="M4 7a2 2 0 0 1 2-2h11a2 2 0 0 1 2 2v2H6a2 2 0 0 0 0 4h13v4a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2Z"></path>
-                        <path d="M18 9h2v4h-2a2 2 0 0 1 0-4Z"></path>
-                      </svg>
-                    </div>
-                    <div class="ui-lines"><span></span><span></span></div>
-                  </div>
-                </div>
-
-                <div class="ui-card">
-                  <div class="ui-row">
-                    <div class="ui-icon">
-                      <svg viewBox="0 0 24 24">
-                        <path d="M12 3a6 6 0 0 1 6 6M6 9a6 6 0 0 1 6-6M18 9v2M6 9v4M9 8v8M12 6v11M15 8v7"></path>
-                      </svg>
-                    </div>
-                    <div class="ui-lines"><span></span><span></span></div>
-                  </div>
-                </div>
-
-                <div class="ui-card">
-                  <div class="ui-row">
-                    <div class="ui-icon">
-                      <svg viewBox="0 0 24 24">
-                        <path d="M5 5h14v14H5Z"></path>
-                        <path d="M8 9h8M8 13h5"></path>
-                      </svg>
-                    </div>
-                    <div class="ui-lines"><span></span><span></span></div>
-                  </div>
-                </div>
-
-                <div class="ui-button">CONFIRM SECURE ACTION</div>
               </div>
             </div>
           </div>
@@ -2287,19 +2311,19 @@
         heroTitle:
           'I build reliable <span class="accent">Android products</span> for real-world use.',
         heroDescription:
-          "Android Developer specializing in Kotlin, Jetpack Compose, Clean Architecture, authentication, and resilient REST API integration.",
+          "Android Developer specializing in Kotlin, Jetpack Compose, Clean Architecture, and resilient REST APIs. My work includes the publicly released Nexpark Android app.",
         viewWork: "View Selected Work",
         discussProject: "Discuss a Project",
         downloadCv: "Download English CV",
         profileText:
           "Building maintainable Android applications with reliable product flows and clear technical decisions.",
-        proofPrivate: "Private Android products presented anonymously",
+        proofProducts: "Android products · Nexpark publicly released",
         proofPrimary: "Primary Android development language",
         proofUi: "Modern declarative mobile interfaces",
         proofRemote: "Available for freelance and contract work",
         workTitle: "Android products built for real-world constraints.",
         workDescription:
-          "Private product experience is presented through anonymized case studies. Client names, proprietary screens, internal roadmaps, and confidential assets are excluded.",
+          "Nexpark is now publicly available, with Android downloads and iOS store links below. My contribution is Android development; the operational product is presented as an anonymized case study.",
         operationalBadge: "Operational Android product",
         operationalTitle: "Smart-mobility platform for operator workflows",
         operationalSummary:
@@ -2316,17 +2340,17 @@
         operationalFeature3: "Payment and operational-status workflows",
         operationalFeature4: "Fast, reusable Jetpack Compose interface",
         visualDisclaimer:
-          "Interface visuals are original portfolio mockups and do not reproduce any private product screen.",
+          "Nexpark is shown with an Android app screenshot. The operational case study uses an original portfolio mockup.",
         labelSecure: "Secure session",
         labelVehicle: "Vehicle workflow",
         labelStatus: "API status",
-        consumerBadge: "Consumer Android product",
-        consumerTitle: "Smart-parking application for end users",
+        consumerBadge: "Released · Publicly available",
+        consumerTitle: "Nexpark — Smart parking for everyday use",
         consumerSummary:
-          "A consumer-facing Android product designed around account access, wallet and payment flows, biometric authentication, vehicle-related security, and a low-friction parking experience.",
-        consumerRole: "Android product development",
+          "The publicly released Nexpark consumer app brings account access, vehicle management, wallet and payment flows into one parking experience. I develop the native Android application with Kotlin and Jetpack Compose.",
+        consumerRole: "Android Developer · Kotlin & Compose",
         consumerFocus: "Secure and simple user journeys",
-        consumerEnvironment: "Private consumer product",
+        consumerEnvironment: "Public release · Android & iOS",
         consumerFeature1: "Wallet and balance-based payment experience",
         consumerFeature2:
           "Biometric authentication for selected sensitive actions",
@@ -2383,7 +2407,15 @@
         phoneLabel: "Phone",
         locationLabel: "Location",
         locationValue: "Iran · Available for remote work",
-        footerText: "Android Developer Portfolio"
+        footerText: "Android Developer Portfolio",
+        consumerPreview: "Nexpark Android app · Launch screen",
+        androidDownloads: "Get the Android app",
+        iosDownloads: "Also available on iOS",
+        downloadBazaar: "Café Bazaar",
+        downloadApk: "Direct APK download",
+        downloadSibapp: "SibApp",
+        visitNexpark: "Product website",
+        consumerReleaseNote: "My contribution: Android development with Kotlin and Jetpack Compose. The iOS links provide access to the wider Nexpark product."
       },
 
       fa: {
@@ -2402,19 +2434,19 @@
         heroTitle:
           'من <span class="accent">محصولات اندرویدی مطمئن</span> برای استفاده واقعی می سازم.',
         heroDescription:
-          "توسعه دهنده اندروید با تمرکز بر Kotlin، Jetpack Compose، معماری تمیز، احراز هویت و یکپارچه سازی پایدار REST API.",
+          "توسعه دهنده اندروید با تمرکز بر Kotlin، Jetpack Compose، معماری تمیز و اتصال پایدار به REST API. اپلیکیشن منتشر شده نکس پارک یکی از محصولاتی است که نسخه اندروید آن را توسعه میدهم.",
         viewWork: "مشاهده نمونه کارها",
         discussProject: "گفتگو درباره پروژه",
         downloadCv: "دانلود رزومه فارسی",
         profileText:
           "ساخت اپلیکیشن های قابل نگهداری اندروید با جریان های مطمئن محصول و تصمیم های فنی روشن.",
-        proofPrivate: "محصول خصوصی اندرویدی با ارائه ناشناس",
+        proofProducts: "محصول اندرویدی · نکس پارک منتشر شده",
         proofPrimary: "زبان اصلی توسعه اندروید",
         proofUi: "رابط های مدرن مبتنی بر Jetpack Compose",
         proofRemote: "آماده همکاری فریلنس و قراردادی",
         workTitle: "محصولات اندرویدی برای نیازها و محدودیت های واقعی.",
         workDescription:
-          "تجربه محصولات خصوصی در قالب مطالعات موردی ناشناس ارائه شده اند. نام مشتری، صفحات اختصاصی، برنامه های داخلی و دارایی های محرمانه نمایش داده نمی شوند.",
+          "نکس پارک حالا به صورت عمومی در دسترس است و لینک های دانلود اندروید و فروشگاه های iOS آن را اینجا میبینید. نقش من توسعه اندروید است؛ محصول عملیاتی نیز در قالب مطالعه موردی ناشناس معرفی شده است.",
         operationalBadge: "محصول عملیاتی اندروید",
         operationalTitle: "پلتفرم حمل و نقل هوشمند برای جریان های اپراتوری",
         operationalSummary:
@@ -2431,17 +2463,17 @@
         operationalFeature3: "جریان های پرداخت و وضعیت عملیات",
         operationalFeature4: "رابط سریع و قابل استفاده مجدد با Jetpack Compose",
         visualDisclaimer:
-          "تصاویر رابط، ماکاپ های مستقل این پرتفولیو هستند و هیچ صفحه ای از محصولات خصوصی را بازسازی نمی کنند.",
+          "تصویر نکس پارک از اپلیکیشن اندروید است. برای مطالعه موردی محصول عملیاتی از ماکاپ مستقل این پورتفولیو استفاده شده است.",
         labelSecure: "نشست امن",
         labelVehicle: "جریان خودرو",
         labelStatus: "وضعیت API",
-        consumerBadge: "محصول اندرویدی کاربرمحور",
-        consumerTitle: "اپلیکیشن پارکینگ هوشمند برای کاربران نهایی",
+        consumerBadge: "منتشر شده · در دسترس عموم",
+        consumerTitle: "نکس پارک؛ پارکینگ هوشمند برای استفاده روزمره",
         consumerSummary:
-          "محصولی اندرویدی برای کاربران نهایی با تمرکز بر حساب کاربری، کیف پول و پرداخت، احراز هویت بیومتریک، امنیت مرتبط با خودرو و تجربه ساده پارکینگ.",
-        consumerRole: "توسعه محصول اندروید",
+          "اپلیکیشن عمومی نکس پارک، حساب کاربری، مدیریت خودرو، کیف پول و پرداخت را در یک تجربه ساده پارکینگ کنار هم قرار میدهد. من روی توسعه نسخه بومی اندروید با Kotlin و Jetpack Compose کار میکنم.",
+        consumerRole: "توسعه دهنده اندروید · Kotlin و Compose",
         consumerFocus: "مسیرهای ساده و امن کاربر",
-        consumerEnvironment: "محصول خصوصی مصرف کننده",
+        consumerEnvironment: "انتشار عمومی · اندروید و iOS",
         consumerFeature1: "تجربه پرداخت مبتنی بر کیف پول و موجودی",
         consumerFeature2:
           "احراز هویت بیومتریک برای عملیات حساس منتخب",
@@ -2498,7 +2530,15 @@
         phoneLabel: "تلفن",
         locationLabel: "موقعیت",
         locationValue: "ایران · آماده همکاری ریموت",
-        footerText: "پرتفولیوی توسعه دهنده اندروید"
+        footerText: "پرتفولیوی توسعه دهنده اندروید",
+        consumerPreview: "اپلیکیشن اندروید نکس پارک · صفحه شروع",
+        androidDownloads: "دریافت نسخه اندروید",
+        iosDownloads: "نسخه iOS نیز در دسترس است",
+        downloadBazaar: "دریافت از کافه بازار",
+        downloadApk: "دانلود مستقیم APK",
+        downloadSibapp: "دریافت از سیب اپ",
+        visitNexpark: "وب سایت نکس پارک",
+        consumerReleaseNote: "نقش من در این محصول، توسعه اندروید با Kotlin و Jetpack Compose است. لینک های iOS برای دسترسی به نسخه دیگر محصول نکس پارک قرار داده شده اند."
       }
     };
 
@@ -2523,7 +2563,6 @@
       try {
         window.localStorage.setItem(key, value);
       } catch (error) {
-        // The page still works when browser storage is unavailable.
       }
     }
 
@@ -2686,3 +2725,4 @@
   </script>
 </body>
 </html>
+
