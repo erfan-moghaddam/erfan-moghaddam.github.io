@@ -799,6 +799,52 @@
       text-align: center;
     }
 
+
+    .tv-preview {
+      align-content: center;
+      background: radial-gradient(ellipse at center, var(--accent-soft), transparent 75%);
+    }
+
+    .tv-set {
+      width: min(100%, 420px);
+    }
+
+    .tv-screen {
+      display: grid;
+      align-content: center;
+      justify-items: center;
+      gap: 8px;
+      min-width: 0;
+      aspect-ratio: 16 / 9;
+      padding: 12px;
+      border: 6px solid #262b32;
+      border-radius: 14px;
+      background: radial-gradient(ellipse at center, #202f31, #12191e 76%);
+      box-shadow: 0 18px 42px rgba(0, 0, 0, 0.22);
+      color: #f7fafc;
+      text-align: center;
+    }
+
+    .tv-notice {
+      color: #ffe168;
+      font-size: 12px;
+      font-weight: 700;
+    }
+
+    .tv-message {
+      font-size: clamp(16px, 2.3vw, 28px);
+      line-height: 1.4;
+      overflow-wrap: anywhere;
+    }
+
+    .tv-stand {
+      width: 28%;
+      height: 14px;
+      margin-inline: auto;
+      border-bottom: 4px solid #262b32;
+      background: linear-gradient(#262b32, #262b32) center / 20% 100% no-repeat;
+    }
+
     .case-index {
       color: var(--muted-2);
       font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
@@ -1805,7 +1851,7 @@
 
       <div class="proof-strip reveal delay-2">
         <div class="proof-item">
-          <strong>2</strong>
+          <strong>3</strong>
           <span data-i18n="proofProducts">Android products · Nexpark publicly released</span>
         </div>
 
@@ -1831,7 +1877,7 @@
 
       <div class="section-heading reveal">
         <h2 data-i18n="workTitle">Work built around real product constraints.</h2>
-        <p data-i18n="workDescription">Nexpark is now publicly available, with Android downloads and iOS store links below. My contribution is Android development; the operational product is presented as an anonymized case study.</p>
+        <p data-i18n="workDescription">My Android work covers the public Nexpark app, an application for parking operators, and NexParkDisplay for Android TV.</p>
       </div>
 
       <p class="visual-disclaimer" data-i18n="visualDisclaimer">Nexpark is shown with an Android app screenshot. The operational case study uses an original portfolio mockup.</p>
@@ -2018,6 +2064,24 @@
               </div>
             </div>
           </div>
+        </article>
+
+        <article class="case-study reveal" id="nexpark-display" aria-labelledby="nexpark-display-title">
+          <div>
+            <h3 id="nexpark-display-title" data-i18n="displayTitle">NexParkDisplay — Parking display for Android TV</h3>
+            <p class="case-summary" data-i18n="displaySummary">I built NexParkDisplay for Android TV to show parking messages on TVs at NexPark facilities.</p>
+          </div>
+
+          <figure class="product-preview tv-preview">
+            <div class="tv-set" aria-hidden="true">
+              <div class="tv-screen">
+                <span class="tv-notice" data-i18n="displayNotice">Parking notice</span>
+                <strong class="tv-message" data-i18n="displayMessage">Welcome to NexPark</strong>
+              </div>
+              <div class="tv-stand"></div>
+            </div>
+            <figcaption data-i18n="displayCaption">Illustration of the TV display</figcaption>
+          </figure>
         </article>
       </div>
     </section>
@@ -2323,7 +2387,12 @@
         proofRemote: "Available for freelance and contract work",
         workTitle: "Android products built for real-world constraints.",
         workDescription:
-          "Nexpark is now publicly available, with Android downloads and iOS store links below. My contribution is Android development; the operational product is presented as an anonymized case study.",
+          "My Android work covers the public Nexpark app, an application for parking operators, and NexParkDisplay for Android TV.",
+        displayTitle: "NexParkDisplay — Parking display for Android TV",
+        displaySummary: "I built NexParkDisplay for Android TV to show parking messages on TVs at NexPark facilities.",
+        displayNotice: "Parking notice",
+        displayMessage: "Welcome to NexPark",
+        displayCaption: "Illustration of the TV display",
         operationalBadge: "Operational Android product",
         operationalTitle: "Smart-mobility platform for operator workflows",
         operationalSummary:
@@ -2446,7 +2515,12 @@
         proofRemote: "آماده همکاری فریلنس و قراردادی",
         workTitle: "محصولات اندرویدی برای نیازها و محدودیت های واقعی.",
         workDescription:
-          "نکس پارک حالا به صورت عمومی در دسترس است و لینک های دانلود اندروید و فروشگاه های iOS آن را اینجا میبینید. نقش من توسعه اندروید است؛ محصول عملیاتی نیز در قالب مطالعه موردی ناشناس معرفی شده است.",
+          "نمونه کارهای اندروید من شامل اپ عمومی نکس پارک، اپ اپراتورهای پارکینگ و نمایشگر NexParkDisplay برای اندروید تی وی است.",
+        displayTitle: "NexParkDisplay | نمایشگر پارکینگ برای Android TV",
+        displaySummary: "NexParkDisplay را برای اندروید تی وی ساختم تا پیام های پارکینگ نکس پارک روی تلویزیون نمایش داده شوند.",
+        displayNotice: "پیام پارکینگ",
+        displayMessage: "به نکس پارک خوش آمدید",
+        displayCaption: "تصویر نمونه از نمایشگر تلویزیون",
         operationalBadge: "محصول عملیاتی اندروید",
         operationalTitle: "پلتفرم حمل و نقل هوشمند برای جریان های اپراتوری",
         operationalSummary:
