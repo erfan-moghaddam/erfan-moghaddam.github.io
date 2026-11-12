@@ -802,47 +802,164 @@
 
     .tv-preview {
       align-content: center;
+      gap: 14px;
+      padding: 20px 12px;
       background: radial-gradient(ellipse at center, var(--accent-soft), transparent 75%);
     }
 
     .tv-set {
-      width: min(100%, 420px);
+      width: min(100%, 460px);
+      container-type: inline-size;
     }
 
     .tv-screen {
       display: grid;
-      align-content: center;
-      justify-items: center;
-      gap: 8px;
-      min-width: 0;
+      grid-template-rows: auto minmax(0, 1fr) auto;
       aspect-ratio: 16 / 9;
-      padding: 12px;
+      overflow: hidden;
+      padding: 0 10px;
       border: 6px solid #262b32;
       border-radius: 14px;
-      background: radial-gradient(ellipse at center, #202f31, #12191e 76%);
+      background: #fafafa;
       box-shadow: 0 18px 42px rgba(0, 0, 0, 0.22);
-      color: #f7fafc;
+      color: #1d1d1d;
+    }
+
+    .tv-brand {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      padding: 5px 2px;
+      border-bottom: 1px solid #e1e1e1;
+      font-size: 12px;
+      font-size: clamp(10px, 3.8cqw, 17px);
+      font-weight: 800;
+      line-height: 1.2;
+    }
+
+    .tv-brand-mark {
+      display: grid;
+      width: 15px;
+      height: 15px;
+      width: clamp(15px, 5.5cqw, 25px);
+      height: clamp(15px, 5.5cqw, 25px);
+      place-items: center;
+      border-radius: 4px;
+      background: #ffdb0a;
+      color: #202020;
+      font-family: Inter, system-ui, sans-serif;
+      font-size: 0.72em;
+    }
+
+    .tv-panel {
+      display: grid;
+      align-content: center;
+      justify-items: center;
+      gap: 3px;
+      padding: 2px 0;
       text-align: center;
     }
 
-    .tv-notice {
-      color: #ffe168;
-      font-size: 12px;
-      font-weight: 700;
+    .tv-panel[hidden] {
+      display: none;
+    }
+
+    .tv-status-icon {
+      position: relative;
+      display: block;
+      width: 28px;
+      height: 28px;
+      width: clamp(20px, 9cqw, 42px);
+      height: clamp(20px, 9cqw, 42px);
+    }
+
+    .tv-clock {
+      border: 2px solid #323232;
+      border-bottom-color: #d2a400;
+      border-radius: 50%;
+    }
+
+    .tv-clock::before {
+      position: absolute;
+      top: 23%;
+      left: 48%;
+      width: 26%;
+      height: 30%;
+      border-left: 2px solid #323232;
+      border-bottom: 2px solid #323232;
+      content: "";
+    }
+
+    .tv-warning {
+      display: grid;
+      place-items: end center;
+      color: #c52024;
+      font-family: Arial, sans-serif;
+      font-size: 26px;
+      font-size: clamp(21px, 10cqw, 46px);
+      line-height: 1;
     }
 
     .tv-message {
-      font-size: clamp(16px, 2.3vw, 28px);
-      line-height: 1.4;
+      font-size: 14px;
+      font-size: clamp(11px, 4.7cqw, 22px);
+      line-height: 1.28;
       overflow-wrap: anywhere;
+    }
+
+    .tv-message-help {
+      font-size: 11px;
+      font-size: clamp(9px, 3.5cqw, 16px);
+      line-height: 1.3;
+      overflow-wrap: anywhere;
+    }
+
+    .tv-screen-footer {
+      padding: 4px 0;
+      border-top: 1px solid #e1e1e1;
+      color: #414141;
+      font-size: 10px;
+      font-size: clamp(8px, 2.8cqw, 12px);
+      font-weight: 700;
+      text-align: left;
     }
 
     .tv-stand {
       width: 28%;
-      height: 14px;
+      height: 12px;
       margin-inline: auto;
       border-bottom: 4px solid #262b32;
       background: linear-gradient(#262b32, #262b32) center / 20% 100% no-repeat;
+    }
+
+    .tv-options {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 8px;
+    }
+
+    .tv-option {
+      min-height: 44px;
+      padding: 8px 12px;
+      border: 1px solid var(--line);
+      border-radius: 10px;
+      background: var(--surface);
+      color: var(--text);
+      font: inherit;
+      font-size: 12px;
+      font-weight: 700;
+      cursor: pointer;
+    }
+
+    .tv-option[aria-pressed="true"] {
+      border-color: var(--accent);
+      background: var(--accent-soft);
+    }
+
+    .tv-option:focus-visible {
+      outline: 2px solid var(--accent);
+      outline-offset: 3px;
     }
 
     .case-index {
@@ -2069,18 +2186,39 @@
         <article class="case-study reveal" id="nexpark-display" aria-labelledby="nexpark-display-title">
           <div>
             <h3 id="nexpark-display-title" data-i18n="displayTitle">NexParkDisplay — Parking display for Android TV</h3>
-            <p class="case-summary" data-i18n="displaySummary">I built NexParkDisplay for Android TV to show parking messages on TVs at NexPark facilities.</p>
+            <p class="case-summary" data-i18n="displaySummary">I built NexParkDisplay to give drivers clear instructions on parking facility TVs while they wait for a fee calculation or need help.</p>
+            <div class="case-features">
+              <div class="case-feature" data-i18n="displayWaitingExample">While the system checks the route, the TV asks the driver to wait for the parking fee to be calculated.</div>
+              <div class="case-feature" data-i18n="displayOfflineExample">If the system loses its connection, the TV shows a warning and directs the driver to NexPark support.</div>
+            </div>
           </div>
 
           <figure class="product-preview tv-preview">
-            <div class="tv-set" aria-hidden="true">
-              <div class="tv-screen">
-                <span class="tv-notice" data-i18n="displayNotice">Parking notice</span>
-                <strong class="tv-message" data-i18n="displayMessage">Welcome to NexPark</strong>
+            <div class="tv-set">
+              <div class="tv-screen" aria-live="polite">
+                <div class="tv-brand">
+                  <span class="tv-brand-mark" aria-hidden="true">N</span>
+                  <span data-i18n="displayBrand">NexPark</span>
+                </div>
+                <div class="tv-panel" id="tv-waiting">
+                  <span class="tv-status-icon tv-clock" aria-hidden="true"></span>
+                  <strong class="tv-message" data-i18n="displayWaitingTitle">AI is checking the route</strong>
+                  <span class="tv-message-help" data-i18n="displayWaitingHelp">Please wait while we calculate the parking fee.</span>
+                </div>
+                <div class="tv-panel" id="tv-offline" hidden>
+                  <span class="tv-status-icon tv-warning" aria-hidden="true">⚠︎</span>
+                  <strong class="tv-message" data-i18n="displayOfflineTitle">Unable to connect to NexPark AI</strong>
+                  <span class="tv-message-help" data-i18n="displayOfflineHelp">Please contact NexPark support.</span>
+                </div>
+                <div class="tv-screen-footer" dir="ltr">www.nexpark.ir</div>
               </div>
-              <div class="tv-stand"></div>
+              <div class="tv-stand" aria-hidden="true"></div>
             </div>
-            <figcaption data-i18n="displayCaption">Illustration of the TV display</figcaption>
+            <div class="tv-options" role="group" aria-labelledby="tv-preview-caption">
+              <button class="tv-option" type="button" aria-controls="tv-waiting" aria-pressed="true" data-i18n="displayWaitingOption">Checking the route</button>
+              <button class="tv-option" type="button" aria-controls="tv-offline" aria-pressed="false" data-i18n="displayOfflineOption">Connection lost</button>
+            </div>
+            <figcaption id="tv-preview-caption" data-i18n="displayCaption">Recreated parking display screens</figcaption>
           </figure>
         </article>
       </div>
@@ -2389,10 +2527,17 @@
         workDescription:
           "My Android work covers the public Nexpark app, an application for parking operators, and NexParkDisplay for Android TV.",
         displayTitle: "NexParkDisplay — Parking display for Android TV",
-        displaySummary: "I built NexParkDisplay for Android TV to show parking messages on TVs at NexPark facilities.",
-        displayNotice: "Parking notice",
-        displayMessage: "Welcome to NexPark",
-        displayCaption: "Illustration of the TV display",
+        displaySummary: "I built NexParkDisplay to give drivers clear instructions on parking facility TVs while they wait for a fee calculation or need help.",
+        displayWaitingExample: "While the system checks the route, the TV asks the driver to wait for the parking fee to be calculated.",
+        displayOfflineExample: "If the system loses its connection, the TV shows a warning and directs the driver to NexPark support.",
+        displayBrand: "NexPark",
+        displayWaitingTitle: "AI is checking the route",
+        displayWaitingHelp: "Please wait while we calculate the parking fee.",
+        displayOfflineTitle: "Unable to connect to NexPark AI",
+        displayOfflineHelp: "Please contact NexPark support.",
+        displayWaitingOption: "Checking the route",
+        displayOfflineOption: "Connection lost",
+        displayCaption: "Recreated parking display screens",
         operationalBadge: "Operational Android product",
         operationalTitle: "Smart-mobility platform for operator workflows",
         operationalSummary:
@@ -2517,10 +2662,17 @@
         workDescription:
           "نمونه کارهای اندروید من شامل اپ عمومی نکس پارک، اپ اپراتورهای پارکینگ و نمایشگر NexParkDisplay برای اندروید تی وی است.",
         displayTitle: "NexParkDisplay | نمایشگر پارکینگ برای Android TV",
-        displaySummary: "NexParkDisplay را برای اندروید تی وی ساختم تا پیام های پارکینگ نکس پارک روی تلویزیون نمایش داده شوند.",
-        displayNotice: "پیام پارکینگ",
-        displayMessage: "به نکس پارک خوش آمدید",
-        displayCaption: "تصویر نمونه از نمایشگر تلویزیون",
+        displaySummary: "NexParkDisplay را برای تلویزیون های پارکینگ ساختم تا راننده روی صفحه بزرگ ببیند چه اتفاقی افتاده و قدم بعدی چیست.",
+        displayWaitingExample: "وقتی سامانه در حال بررسی مسیر است، نمایشگر از راننده میخواهد تا محاسبه مبلغ پارکینگ صبر کند.",
+        displayOfflineExample: "در صورت قطع ارتباط، نمایشگر هشدار میدهد و راننده را به تماس با پشتیبانی نکس پارک راهنمایی میکند.",
+        displayBrand: "نکس پارک",
+        displayWaitingTitle: "هوش مصنوعی در حال بررسی مسیر",
+        displayWaitingHelp: "لطفا منتظر محاسبه مبلغ بمانید!",
+        displayOfflineTitle: "عدم برقراری ارتباط با هوش مصنوعی نکس!",
+        displayOfflineHelp: "لطفا با پشتیبانی نکس پارک تماس بگیرید.",
+        displayWaitingOption: "بررسی مسیر",
+        displayOfflineOption: "قطع ارتباط",
+        displayCaption: "بازسازی دو نمونه از صفحه تلویزیون پارکینگ",
         operationalBadge: "محصول عملیاتی اندروید",
         operationalTitle: "پلتفرم حمل و نقل هوشمند برای جریان های اپراتوری",
         operationalSummary:
@@ -2615,6 +2767,17 @@
         consumerReleaseNote: "نقش من در این محصول، توسعه اندروید با Kotlin و Jetpack Compose است. لینک های iOS برای دسترسی به نسخه دیگر محصول نکس پارک قرار داده شده اند."
       }
     };
+
+    const tvOptions = document.querySelectorAll("#nexpark-display .tv-option");
+    tvOptions.forEach((option) => {
+      option.addEventListener("click", () => {
+        tvOptions.forEach((candidate) => {
+          const isActive = candidate === option;
+          candidate.setAttribute("aria-pressed", String(isActive));
+          document.getElementById(candidate.getAttribute("aria-controls")).hidden = !isActive;
+        });
+      });
+    });
 
     const root = document.documentElement;
     const body = document.body;
