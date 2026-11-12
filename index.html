@@ -893,11 +893,28 @@
     .tv-warning {
       display: grid;
       place-items: end center;
+      padding-bottom: 2px;
+      background: #c52024;
       color: #c52024;
+      clip-path: polygon(50% 0, 100% 100%, 0 100%);
       font-family: Arial, sans-serif;
-      font-size: 26px;
-      font-size: clamp(21px, 10cqw, 46px);
+      font-size: 17px;
+      font-size: clamp(13px, 6cqw, 28px);
+      font-weight: 800;
       line-height: 1;
+    }
+
+    .tv-warning::before {
+      position: absolute;
+      inset: 12% 13% 9%;
+      background: #fafafa;
+      clip-path: polygon(50% 0, 100% 100%, 0 100%);
+      content: "";
+    }
+
+    .tv-warning::after {
+      position: relative;
+      content: "!";
     }
 
     .tv-message {
@@ -2206,7 +2223,7 @@
                   <span class="tv-message-help" data-i18n="displayWaitingHelp">Please wait while we calculate the parking fee.</span>
                 </div>
                 <div class="tv-panel" id="tv-offline" hidden>
-                  <span class="tv-status-icon tv-warning" aria-hidden="true">⚠︎</span>
+                  <span class="tv-status-icon tv-warning" aria-hidden="true"></span>
                   <strong class="tv-message" data-i18n="displayOfflineTitle">Unable to connect to NexPark AI</strong>
                   <span class="tv-message-help" data-i18n="displayOfflineHelp">Please contact NexPark support.</span>
                 </div>
@@ -2662,7 +2679,7 @@
         workDescription:
           "نمونه کارهای اندروید من شامل اپ عمومی نکس پارک، اپ اپراتورهای پارکینگ و نمایشگر NexParkDisplay برای اندروید تی وی است.",
         displayTitle: "NexParkDisplay | نمایشگر پارکینگ برای Android TV",
-        displaySummary: "NexParkDisplay را برای تلویزیون های پارکینگ ساختم تا راننده روی صفحه بزرگ ببیند چه اتفاقی افتاده و قدم بعدی چیست.",
+        displaySummary: "این اپ را برای تلویزیون های پارکینگ ساختم تا راننده روی صفحه بزرگ وضعیت را ببیند و بداند قدم بعدی چیست.",
         displayWaitingExample: "وقتی سامانه در حال بررسی مسیر است، نمایشگر از راننده میخواهد تا محاسبه مبلغ پارکینگ صبر کند.",
         displayOfflineExample: "در صورت قطع ارتباط، نمایشگر هشدار میدهد و راننده را به تماس با پشتیبانی نکس پارک راهنمایی میکند.",
         displayBrand: "نکس پارک",
