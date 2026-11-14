@@ -1010,17 +1010,14 @@
     }
 
     .admin-login-frame {
-      position: relative;
-      aspect-ratio: 709 / 1472;
+      aspect-ratio: auto;
     }
 
     .admin-login-frame img {
-      position: absolute;
-      inset-inline: 0;
-      bottom: 0;
       display: block;
       width: 100%;
       height: auto;
+      margin-top: calc(-100% * 64 / 709);
     }
 
     .admin-preview figcaption {
