@@ -979,6 +979,143 @@
       outline-offset: 3px;
     }
 
+    #nexpark-admin {
+      grid-template-columns: minmax(0, 1fr);
+    }
+
+    .admin-preview-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 300px));
+      justify-content: center;
+      gap: 18px;
+    }
+
+    .admin-preview {
+      margin: 0;
+      min-width: 0;
+    }
+
+    .admin-preview-frame {
+      display: block;
+      width: 100%;
+      aspect-ratio: 709 / 1536;
+      overflow: hidden;
+      border: 1px solid #3a3a41;
+      border-radius: 18px;
+      background: #121214;
+    }
+
+    .admin-preview-frame[role="img"] {
+      container-type: inline-size;
+    }
+
+    img.admin-preview-frame {
+      height: auto;
+      object-fit: contain;
+    }
+
+    .admin-preview figcaption {
+      margin-top: 10px;
+      color: var(--muted);
+      font-size: 12px;
+      line-height: 1.6;
+      text-align: center;
+    }
+
+    .admin-requests-screen {
+      display: flex;
+      flex-direction: column;
+      gap: 5cqw;
+      height: 100%;
+      color: #f5f5f5;
+    }
+
+    .admin-requests-header {
+      display: flex;
+      align-items: center;
+      gap: 3cqw;
+      padding: 5cqw 4cqw;
+      border-bottom: 1px solid #303037;
+      background: #19191f;
+      font-size: 4.7cqw;
+      font-weight: 750;
+    }
+
+    .admin-menu-mark {
+      color: #ffdb0a;
+      font-size: 5.5cqw;
+    }
+
+    .admin-requests-controls,
+    .admin-placeholder {
+      display: grid;
+      gap: 2.8cqw;
+      margin-inline: 4cqw;
+      padding: 3.5cqw;
+      border: 1px solid #303037;
+      border-radius: 5cqw;
+      background: #19191f;
+    }
+
+    .admin-control {
+      padding: 2.9cqw;
+      border: 1px solid #303037;
+      border-radius: 3cqw;
+      color: #b6b6bd;
+      font-size: 3.8cqw;
+    }
+
+    .admin-control-filter {
+      border-color: #ffdb0a;
+      background: #ffdb0a;
+      color: #1d1d1d;
+      font-weight: 800;
+      text-align: center;
+    }
+
+    .admin-placeholder {
+      min-height: 48cqw;
+      align-content: center;
+      gap: 4cqw;
+    }
+
+    .admin-mask {
+      width: 78%;
+      height: 4cqw;
+      border-radius: 999px;
+      background: #33333b;
+    }
+
+    .admin-mask-short {
+      width: 53%;
+    }
+
+    .admin-mask-tag {
+      width: 22%;
+      height: 6cqw;
+      background: #37373f;
+    }
+
+    .admin-mask-plate {
+      width: 35%;
+      height: 7cqw;
+      margin-inline: auto;
+      border-radius: 1.5cqw;
+    }
+
+    .admin-placeholder-link {
+      color: #ffdb0a;
+      font-size: 3.7cqw;
+      font-weight: 750;
+      text-align: center;
+    }
+
+    @media (max-width: 480px) {
+      .admin-preview-grid {
+        grid-template-columns: minmax(0, 280px);
+      }
+    }
+
     .case-index {
       color: var(--muted-2);
       font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
@@ -1985,8 +2122,8 @@
 
       <div class="proof-strip reveal delay-2">
         <div class="proof-item">
-          <strong>3</strong>
-          <span data-i18n="proofProducts">Android products · Nexpark publicly released</span>
+          <strong>4</strong>
+          <span data-i18n="proofProducts">Android and web projects</span>
         </div>
 
         <div class="proof-item">
@@ -2010,8 +2147,8 @@
       <div class="section-kicker" data-i18n="kickerWork">Selected Work</div>
 
       <div class="section-heading reveal">
-        <h2 data-i18n="workTitle">Work built around real product constraints.</h2>
-        <p data-i18n="workDescription">My Android work covers the public Nexpark app, an application for parking operators, and NexParkDisplay for Android TV.</p>
+        <h2 data-i18n="workTitle">Android and web projects for parking operations.</h2>
+        <p data-i18n="workDescription">My work includes the NexPark consumer app, an app for parking operators, the Android TV display, and the web panel for parking groups.</p>
       </div>
 
       <p class="visual-disclaimer" data-i18n="visualDisclaimer">Nexpark is shown with an Android app screenshot. The operational case study uses an original portfolio mockup.</p>
@@ -2237,6 +2374,46 @@
             </div>
             <figcaption id="tv-preview-caption" data-i18n="displayCaption">Recreated parking display screens</figcaption>
           </figure>
+        </article>
+
+        <article class="case-study reveal" id="nexpark-admin" aria-labelledby="nexpark-admin-title">
+          <div>
+            <h3 id="nexpark-admin-title" data-i18n="adminTitle">NexPark Admin Panel</h3>
+            <p class="case-summary" data-i18n="adminSummary">I built a web panel for managing parking groups. Operators can sign in with a username and password or a one-time code, then search, filter, and review membership requests.</p>
+          </div>
+          <div class="admin-preview-grid">
+            <figure class="admin-preview">
+              <img class="admin-preview-frame" src="assets/nexpark-admin-login.jpg" width="709" height="1536" alt="NexPark parking group management sign-in screen" data-i18n-alt="adminLoginAlt" loading="lazy" decoding="async">
+              <figcaption data-i18n="adminLoginCaption">Panel sign-in</figcaption>
+            </figure>
+            <figure class="admin-preview">
+              <div class="admin-preview-frame" role="img" aria-label="Recreated membership requests screen with search, filters, sorting, and placeholder records" data-i18n-label="adminRequestsAlt">
+                <div class="admin-requests-screen" lang="fa" dir="rtl" aria-hidden="true">
+                  <div class="admin-requests-header"><span class="admin-menu-mark">☰</span> درخواست های عضویت</div>
+                  <div class="admin-requests-controls">
+                    <div class="admin-control">جستجو در نام، گروه یا شناسه...</div>
+                    <div class="admin-control admin-control-filter">+ افزودن فیلتر</div>
+                    <div class="admin-control">جدیدترین</div>
+                  </div>
+                  <div class="admin-placeholder">
+                    <div class="admin-mask admin-mask-tag"></div>
+                    <div class="admin-mask"></div>
+                    <div class="admin-mask admin-mask-short"></div>
+                    <div class="admin-mask admin-mask-plate"></div>
+                    <div class="admin-placeholder-link">مشاهده جزئیات</div>
+                  </div>
+                  <div class="admin-placeholder">
+                    <div class="admin-mask admin-mask-tag"></div>
+                    <div class="admin-mask"></div>
+                    <div class="admin-mask admin-mask-short"></div>
+                    <div class="admin-mask admin-mask-plate"></div>
+                    <div class="admin-placeholder-link">مشاهده جزئیات</div>
+                  </div>
+                </div>
+              </div>
+              <figcaption data-i18n="adminRequestsCaption">Membership requests · Record details hidden</figcaption>
+            </figure>
+          </div>
         </article>
       </div>
     </section>
@@ -2536,13 +2713,19 @@
         downloadCv: "Download English CV",
         profileText:
           "Building maintainable Android applications with reliable product flows and clear technical decisions.",
-        proofProducts: "Android products · Nexpark publicly released",
+        proofProducts: "Android and web projects",
         proofPrimary: "Primary Android development language",
         proofUi: "Modern declarative mobile interfaces",
         proofRemote: "Available for freelance and contract work",
-        workTitle: "Android products built for real-world constraints.",
+        workTitle: "Android and web projects for parking operations.",
         workDescription:
-          "My Android work covers the public Nexpark app, an application for parking operators, and NexParkDisplay for Android TV.",
+          "My work includes the NexPark consumer app, an app for parking operators, the Android TV display, and the web panel for parking groups.",
+        adminTitle: "NexPark Admin Panel",
+        adminSummary: "I built a web panel for managing parking groups. Operators can sign in with a username and password or a one-time code, then search, filter, and review membership requests.",
+        adminLoginAlt: "NexPark parking group management sign-in screen",
+        adminLoginCaption: "Panel sign-in",
+        adminRequestsCaption: "Membership requests · Record details hidden",
+        adminRequestsAlt: "Recreated membership requests screen with search, filters, sorting, and placeholder records",
         displayTitle: "NexParkDisplay — Parking display for Android TV",
         displaySummary: "I built NexParkDisplay to give drivers clear instructions on parking facility TVs while they wait for a fee calculation or need help.",
         displayWaitingExample: "While the system checks the route, the TV asks the driver to wait for the parking fee to be calculated.",
@@ -2671,13 +2854,19 @@
         downloadCv: "دانلود رزومه فارسی",
         profileText:
           "ساخت اپلیکیشن های قابل نگهداری اندروید با جریان های مطمئن محصول و تصمیم های فنی روشن.",
-        proofProducts: "محصول اندرویدی · نکس پارک منتشر شده",
+        proofProducts: "پروژه اندروید و وب",
         proofPrimary: "زبان اصلی توسعه اندروید",
         proofUi: "رابط های مدرن مبتنی بر Jetpack Compose",
         proofRemote: "آماده همکاری فریلنس و قراردادی",
-        workTitle: "محصولات اندرویدی برای نیازها و محدودیت های واقعی.",
+        workTitle: "پروژه های اندروید و وب برای مدیریت پارکینگ",
         workDescription:
-          "نمونه کارهای اندروید من شامل اپ عمومی نکس پارک، اپ اپراتورهای پارکینگ و نمایشگر NexParkDisplay برای اندروید تی وی است.",
+          "نمونه کارهای من شامل اپ عمومی نکس پارک، اپ اپراتورهای پارکینگ، نمایشگر اندروید تی وی و پنل وب مدیریت گروه های پارکینگ است.",
+        adminTitle: "پنل مدیریت نکس پارک",
+        adminSummary: "این پنل وب را برای مدیریت گروه های پارکینگ ساختم. کاربر میتواند با نام کاربری و رمز عبور یا با رمز یکبار مصرف وارد شود و درخواست های عضویت را جستجو، فیلتر و بررسی کند.",
+        adminLoginAlt: "صفحه ورود به پنل مدیریت گروه های پارکینگ نکس پارک",
+        adminLoginCaption: "ورود به پنل",
+        adminRequestsCaption: "درخواست های عضویت · اطلاعات کارت ها مخفی شده",
+        adminRequestsAlt: "بازسازی صفحه درخواست های عضویت با جستجو، فیلتر و مرتب سازی و کارت های بدون اطلاعات",
         displayTitle: "NexParkDisplay | نمایشگر پارکینگ برای Android TV",
         displaySummary: "این اپ را برای تلویزیون های پارکینگ ساختم تا راننده روی صفحه بزرگ وضعیت را ببیند و بداند قدم بعدی چیست.",
         displayWaitingExample: "وقتی سامانه در حال بررسی مسیر است، نمایشگر از راننده میخواهد تا محاسبه مبلغ پارکینگ صبر کند.",
@@ -2862,6 +3051,14 @@
         if (dictionary[key] !== undefined) {
           element.innerHTML = dictionary[key];
         }
+      });
+
+      document.querySelectorAll("[data-i18n-alt]").forEach((element) => {
+        element.alt = dictionary[element.dataset.i18nAlt];
+      });
+
+      document.querySelectorAll("[data-i18n-label]").forEach((element) => {
+        element.setAttribute("aria-label", dictionary[element.dataset.i18nLabel]);
       });
 
       langButton.textContent = isPersian ? "EN" : "FA";
