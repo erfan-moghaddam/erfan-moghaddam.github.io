@@ -1,0 +1,50 @@
+[
+  {
+    "path": "Erfan_Moghaddam_Android_Developer_CV_EN.pdf",
+    "sha256": "d2bdb9110502a891738f6c4a37657986e7fd00c87a3bd4b7a695ddc8c880bc50"
+  },
+  {
+    "path": "Erfan_Moghaddam_Android_Developer_CV_FA.pdf",
+    "sha256": "a278238c847cfc0db6287a70080267725297b550c2ca4e99a1b931a249b08dff"
+  },
+  {
+    "path": "assets/nexpark-admin-login.jpg",
+    "sha256": "0e13704447dcdc86e5027be99c01023848e71c16642f3c579e555f18d76f21ed"
+  },
+  {
+    "path": "assets/parkit_home.jpg",
+    "sha256": "046bce765dfcfb7ca3eac3b599862e220251256c995c3ffb5529891b1494278a"
+  },
+  {
+    "path": "assets/parkit_otp.jpg",
+    "sha256": "cc0c60c2d6b5277f0b23c43d3d0dd0585fbb63ccf70c793c9f01ae97efedb206"
+  },
+  {
+    "path": "assets/parkit_payment.jpg",
+    "sha256": "0f4824465c86ea8f81ac520039f24c6206535ecb67bdd5443b1e36719e08fd0a"
+  },
+  {
+    "path": "assets/parkit_search.jpg",
+    "sha256": "f1a5dbcc9311b34cbcade472d76bac5cafb1297db1ab3d6b58df2e31b2fe4652"
+  },
+  {
+    "path": "assets/profile.jpg",
+    "sha256": "2e8e5c13ab6b570f401e96574449b8fce221847bf55c9c73980e5b53c28412bf"
+  },
+  {
+    "path": "assets/public_biometric.jpg",
+    "sha256": "a9939fa0fe07177d82b2f5a769d8f3cdf62f49a279bd4235ed876510bf485151"
+  },
+  {
+    "path": "assets/public_otp.jpg",
+    "sha256": "bd61188c22468b08a2a92aad3e0ca3b952d2e4a7e219503cc76124547adaa768"
+  },
+  {
+    "path": "assets/public_splash.jpg",
+    "sha256": "3baf5b621778dec260817751a70f207ca2894b49564822412967f8e44193a7d9"
+  },
+  {
+    "path": "assets/public_wallet.jpg",
+    "sha256": "0cc539e71eb0f7eaaae10ed5bce163b4863d0bb857cbb1130a1dcf66f681cb8e"
+  }
+]
